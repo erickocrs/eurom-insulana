@@ -1,24 +1,43 @@
-import React from 'react';
-import logo from '~/logo.svg';
+import React from 'react'
+import styled from 'styled-components'
 
-const Header = () => {
+import './Header.scss';
+
+import logo from '~/assets/images/LOGO.png'
+
+import Container from '~/components/Container/Container.js'
+
+export const Header = () => {
 
     return (
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <HeaderSection className="HeaderSection">
+          <Container>
+            <Logo src={logo} className="Logo" alt="logo"/>
+            <RightContainer className="RightContainer">
+              <ButtonFreeQuote className="ButtonFreeQuote">
+                <span>Orçamento Gratuito</span>
+              </ButtonFreeQuote>
+              <ButtonOpenMenu className="ButtonOpenMenu">
+                <OpenMenuStyleBar/>
+                <OpenMenuStyleBar/>
+                <OpenMenuStyleBar/>
+              </ButtonOpenMenu>
+            </RightContainer>
+          </Container>
+        </HeaderSection>
     );
 }
+
+const HeaderSection = styled.header``;
+
+const RightContainer = styled.div``;
+
+const OpenMenuStyleBar = styled.div``;
+
+const Logo = styled.img``;
+
+const ButtonFreeQuote = styled.div``;
+
+const ButtonOpenMenu = styled.div``;
 
 export default Header;

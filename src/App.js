@@ -1,11 +1,14 @@
-import './App.css';
 import Header from './components/Header/Header';
+
+import '~/assets/scss/Fonts.scss';
+import '~/assets/scss/Defaults.scss';
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Header/>
-    </div>
+      <ContentHeader/>
+    </>
   );
 }
 
