@@ -11,11 +11,10 @@ export const Container = styled.div`
 
 
     width:100%;
-    max-width:1425px;
+    max-width:1662px;
 
     padding: 0 20px;
     
-    box-sizing:border-box;
 `;
 
 export default Container;
