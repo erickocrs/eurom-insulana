@@ -8,6 +8,7 @@ export const Container = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content:space-between;
+    justify-content:${ props => props.center ? "center" : "space-between"};
 
 
     width:100%;

@@ -1,0 +1,19 @@
+.GuideToScrollBarSection{   
+
+    .GuideToScroll{
+        position: relative;
+
+        width:48px;
+        height:88px;
+
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    .GuideToScrollArrow{
+
+        position: absolute;
+        top:10px;
+        left:calc(50% - 7.5px);
+    }
+}
