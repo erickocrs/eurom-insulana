@@ -1,21 +1,26 @@
 import React from 'react'
 import styled from 'styled-components'
-
-import './Header.scss';
-
 import logo from '~/assets/images/LOGO.png'
-
-import Container from '~/components/Container/Container.js'
+import './Header.scss';
+import {
+Row,
+HeaderSection,
+RightContainer,
+OpenMenuStyleBar,
+Logo,
+ButtonFreeQuote,
+ButtonOpenMenu
+} from './Header.styles'
 
 export const Header = () => {
 
     return (
         <HeaderSection className="HeaderSection">
-          <Container>
+          <Row>
             <Logo src={logo} className="Logo" alt="logo"/>
             <RightContainer className="RightContainer">
               <ButtonFreeQuote className="ButtonFreeQuote">
-                <span>Orçamento Gratuito</span>
+                Orçamento Gratuito
               </ButtonFreeQuote>
               <ButtonOpenMenu className="ButtonOpenMenu">
                 <OpenMenuStyleBar/>
@@ -23,21 +28,9 @@ export const Header = () => {
                 <OpenMenuStyleBar/>
               </ButtonOpenMenu>
             </RightContainer>
-          </Container>
+            </Row>
         </HeaderSection>
     );
 }
-
-const HeaderSection = styled.header``;
-
-const RightContainer = styled.div``;
-
-const OpenMenuStyleBar = styled.div``;
-
-const Logo = styled.img``;
-
-const ButtonFreeQuote = styled.div``;
-
-const ButtonOpenMenu = styled.div``;
 
 export default Header;
