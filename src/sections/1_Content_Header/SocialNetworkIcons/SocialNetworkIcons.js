@@ -32,6 +32,13 @@ const IconsContainer = styled.div`
 
 const Link = styled.a`
     margin-bottom:21px;
+    &:hover{
+        opacity:.8;
+        transform:translate(0,-4px);
+    }
+
+    transform:translate(0,0px);
+    transition:all 150ms ease;
 `;
 
 const Icon = styled.img`

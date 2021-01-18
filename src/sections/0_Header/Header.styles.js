@@ -33,6 +33,9 @@ export const RightContainer = styled.div`
 
 export const OpenMenuStyleBar = styled.div``;
 
+export const LogoLink = styled.a`
+`;
+
 export const Logo = styled.img`
     margin: 5px 0px 0px 0px;
 `;

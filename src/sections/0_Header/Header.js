@@ -8,6 +8,7 @@ HeaderSection,
 RightContainer,
 OpenMenuStyleBar,
 Logo,
+LogoLink,
 ButtonFreeQuote,
 ButtonOpenMenu
 } from './Header.styles'
@@ -17,7 +18,9 @@ export const Header = () => {
     return (
         <HeaderSection className="HeaderSection">
           <Row>
-            <Logo src={logo} className="Logo" alt="logo"/>
+            <LogoLink href="./">
+              <Logo src={logo} className="Logo" alt="logo"/>
+            </LogoLink>
             <RightContainer className="RightContainer">
               <ButtonFreeQuote className="ButtonFreeQuote">
                 Orçamento Gratuito
