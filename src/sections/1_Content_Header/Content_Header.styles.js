@@ -2,10 +2,13 @@ import styled, { keyframes } from 'styled-components'
 import RowComponent from '~/components/Row/Row'
 import LightLeakSrc from '~/assets/images/light-leak.png'
 
-export const ContentHeaderSection = styled.section``;
+export const ContentHeaderSection = styled.section`
+  padding-top:98px;
+`;
 
 export const ContentImage = styled.img`
-  margin:118px 0 0 0px;
+  //margin:118px 0 0 0px;
+  margin:20px 0 0 0px;
 `;
 
 export const ImageContainer = styled.div`

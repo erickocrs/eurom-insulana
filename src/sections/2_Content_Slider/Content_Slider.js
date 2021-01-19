@@ -1,5 +1,7 @@
 import React from 'react'
+import { useDispatch, useSelector } from "react-redux";
 import Row from '~/components/Row/Row'
+import ScrollMarker from '~/components/Scroll/ScrollMarker'
 import {
 Section,
 Slider,
@@ -16,7 +18,11 @@ TextLink,
 Button,
 BlueCircleDesign,
 WhiteCircleDesign,
-LineCircleDesign
+LineCircleDesign,
+SliderPagination,
+PaginationItem,
+PaginationTitle,
+ScrollMarkerPosition
 } from './Content_Slider.styles.js'
 import imageLimpezaGerais from '~/assets/images/Limpezas_gerais.png'
 import imageLimpezaEspecializada from '~/assets/images/Limpeza_especializada.png'
@@ -25,6 +31,8 @@ import imageAssistenciaTecnica from '~/assets/images/Assistencia_tecnica.png'
 
 export const Content_Slider = () => {
 
+    const scrollReducer = useSelector((state) => state.scrollReducer);  
+    const [currentSlide, setCurrentSlide] = React.useState(0);
     const [sliderList, setSliderList] = React.useState([        
         {
             image : imageLimpezaGerais,
@@ -36,7 +44,7 @@ export const Content_Slider = () => {
         },
         {
             image : imageLimpezaEspecializada,
-            title : (<>LIMPEZA<br/>ESPECIALIZADA</>),
+            title : (<>LIMPEZA<br/> ESPECIALIZADA</>),
             text : "Há situações que pedem uma higienização ainda mais especializada dos espaços.",
             linkText : "Saiba mais",
             buttonText : "Peça-nos um orçamento",
@@ -60,53 +68,47 @@ export const Content_Slider = () => {
         }
     ]);
 
-    const SectionEl = React.useRef(null);
-
-    const [scrolling, setScrolling] = React.useState(false);
-    const [scrollTop, setScrollTop] = React.useState(0);
-    const [animate, setAnimate] = React.useState(false);   
-    const [currentSlide, setCurrentSlide] = React.useState(0);
-      
-    const onScroll = e => {
-        setScrollTop(e.target.documentElement.scrollTop);
-        setScrolling(e.target.documentElement.scrollTop > scrollTop);
-    };
-
     const ifMaxCarousel = () => {
         return currentSlide + 2 > sliderList.length;
     }
     
     const nextSlide = () => {
-        console.log("next")
+
         if(!ifMaxCarousel()){
-            console.log("pas")
+            
             let newCurrentSlide = currentSlide + 1;
             setCurrentSlide(newCurrentSlide);
         }
     }
 
-    React.useEffect(() => {
+    const activeSlide = n => {
+
         let sliderListNew = sliderList.map((slide) => {
             slide.on = false;
             return slide;
         });
-        sliderListNew[currentSlide].on = true;
+
+        sliderListNew[n].on = true;
         setSliderList(sliderListNew);
-    }, [currentSlide])
+        setCurrentSlide(n);
+    }
 
     React.useEffect(() => {
-        window.addEventListener("scroll", onScroll);        
-    }, []);
-    
-    React.useEffect(() => {
-        if(!animate && scrollTop + 500 > SectionEl.current.offsetTop) {
-            setAnimate(true);
-            window.removeEventListener("scroll", onScroll);
+
+        if( scrollReducer.targetList[scrollReducer.currentTarget] &&
+            scrollReducer.targetList[scrollReducer.currentTarget].markerName.indexOf("Slider-") >= 0)
+        {
+            let newSlide = scrollReducer.targetList[scrollReducer.currentTarget].markerName.replace('Slider-','');
+            
+            console.log("newSlide",newSlide);
+            activeSlide(newSlide);
         }
-    }, [scrollTop]);
-
+        
+    }, [scrollReducer]);
+    
     return(
-        <Section ref={SectionEl} onClick={() => nextSlide()}>
+        
+        <Section>
             <Row center>
                 <Slider>
                     <SliderList>
@@ -115,22 +117,37 @@ export const Content_Slider = () => {
                                 {sliderList.map((slide, i) => {
                                     return (
                                         <Slide on={slide.on}>
-                                            <ContainerImage animate={animate} on={slide.on}>
+                                            <ScrollMarkerPosition>
+                                                <ScrollMarker absolute markerName={"Slider-" + i}/>                                                  
+                                            </ScrollMarkerPosition>
+                                            <ContainerImage  on={slide.on}>
                                                 <Image src={slide.image}/>
-                                                <BlueCircleDesign animate={animate} on={slide.on}/>
-                                                <WhiteCircleDesign animate={animate} on={slide.on}/>
-                                                <LineCircleDesign animate={animate} on={slide.on}/>
+                                                <BlueCircleDesign  on={slide.on}/>
+                                                <WhiteCircleDesign  on={slide.on}/>
+                                                <LineCircleDesign  on={slide.on}/>
                                             </ContainerImage>
                                             <Infos>
-                                                <Title animate={animate} on={slide.on}>{slide.title}</Title>
-                                                <Text animate={animate} on={slide.on}>{slide.text}</Text>
-                                                <TextLink animate={animate} on={slide.on}>{slide.linkText}</TextLink>
-                                                <Button animate={animate} on={slide.on}>{slide.buttonText}</Button>
-                                            </Infos>
-                                        </Slide>
+                                                <Title  on={slide.on}>{slide.title}</Title>
+                                                <Text  on={slide.on}>{slide.text}</Text>
+                                                <TextLink  on={slide.on}>{slide.linkText}</TextLink>
+                                                <Button  on={slide.on}>{slide.buttonText}</Button>
+                                            </Infos>    
+                                        </Slide>       
+                                        
                                     )
                                 })}
+                                
                             </SliderCarrousel>
+                            <SliderPagination>
+                                {sliderList.map((slide, i) => {
+                                    return (
+                                        <PaginationItem on={slide.on}>
+                                            <PaginationTitle on={slide.on}>{slide.title}</PaginationTitle>
+                                        </PaginationItem>
+                                    )
+                                })}
+
+                            </SliderPagination>
                         </SliderCrop>
                     </SliderList>
                 </Slider>

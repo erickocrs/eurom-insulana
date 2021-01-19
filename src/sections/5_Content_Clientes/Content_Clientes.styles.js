@@ -135,3 +135,14 @@ export const ClientLogo = styled.img`
 
     transition:${props => props.delay ? "all 2600ms ease " + props.delay + "ms" : "2600ms 0ms"};
 `;
+
+export const ScrollMarkerPosition = styled.div`
+    position:absolute;
+    display:block;
+
+    width:100%;
+    height:auto;
+
+    top:170px;
+    left:0;
+`;

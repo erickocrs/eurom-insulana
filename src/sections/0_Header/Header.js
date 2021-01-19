@@ -1,4 +1,5 @@
 import React from 'react'
+import { useDispatch, useSelector } from "react-redux";
 import styled from 'styled-components'
 import logo from '~/assets/images/LOGO.png'
 import './Header.scss';
@@ -14,6 +15,15 @@ ButtonOpenMenu
 } from './Header.styles'
 
 export const Header = () => {
+  
+    const dispatch = useDispatch();
+
+    const openMenu = () => {
+      dispatch({
+        type: "SET_MENU_OPEN",            
+        open : true
+      });
+    }
 
     return (
         <HeaderSection className="HeaderSection">
@@ -25,7 +35,7 @@ export const Header = () => {
               <ButtonFreeQuote className="ButtonFreeQuote">
                 Orçamento Gratuito
               </ButtonFreeQuote>
-              <ButtonOpenMenu className="ButtonOpenMenu">
+              <ButtonOpenMenu onClick={openMenu} className="ButtonOpenMenu">
                 <OpenMenuStyleBar/>
                 <OpenMenuStyleBar/>
                 <OpenMenuStyleBar/>

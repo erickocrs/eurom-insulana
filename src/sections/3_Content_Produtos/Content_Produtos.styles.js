@@ -122,6 +122,7 @@ export const ImageBox = styled(Col)`
     align-items:flex-end;
     width:${100/12*7+"%"};    
     margin-top:104px;
+    z-index:1;
     
 `;
 
@@ -134,6 +135,7 @@ export const Image = styled.img`
     "translate(0,-50px)"};
 
     transition:all 3700ms ease;
+    z-index:1;
 `;
 
 export const ImageSmaller = styled.img`
@@ -144,4 +146,5 @@ export const ImageSmaller = styled.img`
     "translate(0,150px)"};
 
     transition:all 3500ms ease;
+    z-index:1;
 `;

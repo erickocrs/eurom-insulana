@@ -1,4 +1,6 @@
 import React from 'react'
+import { useDispatch, useSelector } from "react-redux";
+import ScrollMarker from '~/components/Scroll/ScrollMarker'
 import {
 Section,
 Infos,
@@ -11,37 +13,34 @@ ImageContainer,
 Image,
 BlueCircleDesign,
 WhiteCircleDesign,
-LineCircleDesign
+LineCircleDesign,
+ScrollMarkerPosition
 } from './Content_SaibaMais.styles'
 import imageSrc from '~/assets/images/Quem_somos.png'
 import Row from '~/components/Row/Row'
 
 export const Content_SaibaMais = () => {
     
-    const SectionEl = React.useRef(null);
+    const [animate, setAnimate] = React.useState(false);    
 
-    const [scrolling, setScrolling] = React.useState(false);
-    const [scrollTop, setScrollTop] = React.useState(0);
-    const [animate, setAnimate] = React.useState(false);
-
-    const onScroll = e => {
-        setScrollTop(e.target.documentElement.scrollTop);
-        setScrolling(e.target.documentElement.scrollTop > scrollTop);
-    };
+    const scrollReducer = useSelector((state) => state.scrollReducer);  
 
     React.useEffect(() => {
-        window.addEventListener("scroll", onScroll);
-      }, []);
-      
-    React.useEffect(() => {
-        if(!animate && scrollTop + 800 > SectionEl.current.offsetTop) {
+
+        if( scrollReducer.targetList[scrollReducer.currentTarget] &&
+            scrollReducer.targetList[scrollReducer.currentTarget].markerName == "SaibaMais")
+        {
             setAnimate(true);
-            window.removeEventListener("scroll", onScroll);
         }
-    }, [scrollTop]);
+        
+    }, [scrollReducer]);
     
     return(
-        <Section ref={SectionEl}>
+        
+        <Section>
+            <ScrollMarkerPosition>
+                <ScrollMarker absolute markerName="SaibaMais"/>
+            </ScrollMarkerPosition>
             <Row left>
                 <ImageBox>
                     <ImageContainer animate={animate}>

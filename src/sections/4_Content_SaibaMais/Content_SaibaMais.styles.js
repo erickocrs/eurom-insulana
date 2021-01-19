@@ -192,3 +192,14 @@ export const LineCircleDesign = styled.div`
 
     transition:all 2150ms ease;
 `   
+
+export const ScrollMarkerPosition = styled.div`
+    position:absolute;
+    display:block;
+
+    width:100%;
+    height:auto;
+
+    top:-200px;
+    left:0;
+`;

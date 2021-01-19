@@ -1,4 +1,6 @@
 import React from 'react'
+import { useDispatch, useSelector } from "react-redux";
+import ScrollMarker from '~/components/Scroll/ScrollMarker'
 import {
 BlueCircle,
 Section,
@@ -15,45 +17,39 @@ import imageSrc from '~/assets/images/Produtos_1.png'
 import imageSmallerSrc from '~/assets/images/Produtos_2.png'
 import Row from '~/components/Row/Row'
 
-export const Content_Produtos = () => {
-    
-  const SectionEl = React.useRef(null);
+export const Content_Produtos = () => {    
 
-  const [scrolling, setScrolling] = React.useState(false);
-  const [scrollTop, setScrollTop] = React.useState(0);
-  const [animate, setAnimate] = React.useState(false);    
-    
-    const onScroll = e => {
-        setScrollTop(e.target.documentElement.scrollTop);
-        setScrolling(e.target.documentElement.scrollTop > scrollTop);
-    };
+    const [animate, setAnimate] = React.useState(false);    
+
+    const scrollReducer = useSelector((state) => state.scrollReducer);  
 
     React.useEffect(() => {
-        window.addEventListener("scroll", onScroll);
-      }, []);
-      
-    React.useEffect(() => {
-        if(!animate && scrollTop + 900 > SectionEl.current.offsetTop) {
+        
+        if( scrollReducer.targetList[scrollReducer.currentTarget] &&
+            scrollReducer.targetList[scrollReducer.currentTarget].markerName == "Produtos")
+        {
             setAnimate(true);
-            window.removeEventListener("scroll", onScroll);
         }
-    }, [scrollTop]);
+        
+    }, [scrollReducer]);
 
     return(
-        <Section ref={SectionEl}>
-            <Row left>
-                <Infos animate={animate}>
-                    <BlueCircle animate={animate}/>
-                    <Title animate={animate}>Produtos e equipamentos de última geração.</Title>
-                    <Text animate={animate}>Para venda ao público ou para utilização na sua empresa.</Text>
-                    <Button animate={animate}>Encontre o que procura</Button>       
-                </Infos>
-                <ImageBox>
-                    <Image animate={animate} src={imageSrc}/>
-                    <ImageSmaller animate={animate} src={imageSmallerSrc}/>
-                </ImageBox>
-            </Row>
-        </Section>
+        <ScrollMarker markerName="Produtos">
+            <Section>
+                <Row left>
+                    <Infos animate={animate}>
+                        <BlueCircle animate={animate}/>
+                        <Title animate={animate}>Produtos e equipamentos de última geração.</Title>
+                        <Text animate={animate}>Para venda ao público ou para utilização na sua empresa.</Text>
+                        <Button animate={animate}>Encontre o que procura</Button>       
+                    </Infos>
+                    <ImageBox>
+                        <Image animate={animate} src={imageSrc}/>
+                        <ImageSmaller animate={animate} src={imageSmallerSrc}/>
+                    </ImageBox>
+                </Row>
+            </Section>
+        </ScrollMarker>
     )
 }
 

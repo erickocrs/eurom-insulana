@@ -1,5 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useDispatch, useSelector } from "react-redux";
+
+import ScrollMarker from '~/components/Scroll/ScrollMarker'
 
 import imageSrc_01 from '~/assets/images/TAAG.png'
 import imageSrc_02 from '~/assets/images/SONANGOL.png'
@@ -23,7 +26,8 @@ ClientBox,
 BlueCircle,
 Button,
 ClientList,
-ClientLogo } from './Content_Clientes.styles'
+ClientLogo,
+ScrollMarkerPosition } from './Content_Clientes.styles'
 
 import Row from '~/components/Row/Row'
 export const Content_Clientes = () => {
@@ -43,30 +47,25 @@ export const Content_Clientes = () => {
         { title:"ENANGOLA", image: imageSrc_12 }
     ];
 
-    const SectionEl = React.useRef(null);
+    const [animate, setAnimate] = React.useState(false);    
 
-    const [scrolling, setScrolling] = React.useState(false);
-    const [scrollTop, setScrollTop] = React.useState(0);
-    const [animate, setAnimate] = React.useState(false);
-
-    const onScroll = e => {
-        setScrollTop(e.target.documentElement.scrollTop);
-        setScrolling(e.target.documentElement.scrollTop > scrollTop);
-    };
+    const scrollReducer = useSelector((state) => state.scrollReducer);  
 
     React.useEffect(() => {
-        window.addEventListener("scroll", onScroll);
-      }, []);
-      
-    React.useEffect(() => {
-        if(!animate && scrollTop + 500 > SectionEl.current.offsetTop) {
+
+        if( scrollReducer.targetList[scrollReducer.currentTarget] &&
+            scrollReducer.targetList[scrollReducer.currentTarget].markerName == "Clientes")
+        {
             setAnimate(true);
-            window.removeEventListener("scroll", onScroll);
         }
-    }, [scrollTop]);
+        
+    }, [scrollReducer]);
 
     return(
-        <Section ref={SectionEl}>
+        <Section>
+            <ScrollMarkerPosition>
+                <ScrollMarker markerName="Clientes"/>
+            </ScrollMarkerPosition>
             <Row left>
                 <Infos>
                     <BlueCircle animate={animate}/>

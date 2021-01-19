@@ -21,22 +21,25 @@ export const SliderCrop = styled.div`
 `
 
 export const SliderCarrousel = styled.div`
-    float: left;
+    position:relative;
+
     width:100%;
     height:100%;
-    transform:${props => `translate(0,-${props.currentSlide * 900}px)`};
 
     transition:all 1500ms ease;
 `
 
 export const Slide = styled.div`
+    position:absolute;
+    top:0;left:0;
+
+    width:100%;
+    height:100%;
+
     display:flex;
     flex-direction:row;
     align-items:flex-start;
     justify-content:center;
-
-    width:100%;
-    margin-bottom:200px;
 
     opacity:${props => props.on ? "1" : "0"};  
     transition:all 500ms ease;
@@ -58,8 +61,8 @@ export const ContainerImage = styled(Col)`
 
     z-index:0;
 
-    opacity:${props => props.on && props.animate ? "1" : "0"};  
-    transform: ${props => props.on && props.animate ? 
+    opacity:${props => props.on ? "1" : "0"};  
+    transform: ${props => props.on ? 
     "translate(0,0) rotateX(00deg) rotateY(00deg) " :
     "translate(0,100px) rotateX(30deg) rotateY(10deg) "};
 
@@ -84,8 +87,8 @@ export const BlueCircleDesign = styled.div`
     border-radius:50%;
     z-index:-1;
     
-    opacity:${props => props.on && props.animate ? "1" : "0"};  
-    transform: ${props => props.on && props.animate ? 
+    opacity:${props => props.on ? "1" : "0"};  
+    transform: ${props => props.on ? 
     "translate(0,0) rotateX(00deg) rotateY(00deg) " :
     "translate(0,0) rotateX(70deg) rotateY(30deg) "};
 
@@ -106,8 +109,8 @@ export const WhiteCircleDesign = styled.div`
     z-index:-1;
     
     
-    opacity:${props => props.on && props.animate ? "1" : "0"};  
-    transform: ${props => props.on && props.animate ? 
+    opacity:${props => props.on ? "1" : "0"};  
+    transform: ${props => props.on ? 
     "translate(0,0) rotateX(00deg) rotateY(00deg) " :
     "translate(0,0) rotateX(70deg) rotateY(10deg) "};
 
@@ -127,8 +130,8 @@ export const LineCircleDesign = styled.div`
 
     z-index:-1;
      
-    opacity:${props => props.on && props.animate ? "1" : "0"};  
-    transform: ${props => props.on && props.animate ? 
+    opacity:${props => props.on ? "1" : "0"};  
+    transform: ${props => props.on ? 
     "translate(0,0) rotateX(00deg) rotateY(00deg) " :
     "translate(0,0) rotateX(70deg) rotateY(-30deg) "};
 
@@ -145,8 +148,8 @@ export const Title = styled.div`
     text-transform: uppercase;
     color:#1A2CAD;
 
-    opacity:${props => props.on && props.animate ? "1" : "0"};  
-    transform: ${props => props.on && props.animate ? 
+    opacity:${props => props.on ? "1" : "0"};  
+    transform: ${props => props.on ? 
     "translate(0,0)" :
     "translate(-100px,0)"};
 
@@ -161,8 +164,8 @@ export const Text = styled.div`
     font-weight:normal;
     color: #313F45;
     
-    opacity:${props => props.on && props.animate ? "1" : "0"};  
-    transform: ${props => props.on && props.animate ? 
+    opacity:${props => props.on ? "1" : "0"};  
+    transform: ${props => props.on ? 
     "translate(0,0)" :
     "translate(-110px,0)"};
 
@@ -178,8 +181,8 @@ export const TextLink = styled.div`
     text-decoration:underline;
     color: #1A2CAD;
     
-    opacity:${props => props.on && props.animate ? "1" : "0"};  
-    transform: ${props => props.on && props.animate ? 
+    opacity:${props => props.on ? "1" : "0"};  
+    transform: ${props => props.on ? 
     "translate(0,0)" :
     "translate(-70px,0)"};
 
@@ -212,8 +215,8 @@ export const Button = styled.div`
     letter-spacing:0px;
     font-weight: 500;
     
-    opacity:${props => props.on && props.animate ? "1" : "0"};  
-    transform: ${props => props.on && props.animate ?     
+    opacity:${props => props.on ? "1" : "0"};  
+    transform: ${props => props.on ?     
     "translate(0,0) rotateX(00deg) rotateY(00deg) " :
     "translate(-100px,0) rotateX(30deg) rotateY(15deg) "};
 
@@ -226,3 +229,63 @@ export const Button = styled.div`
 
     cursor: pointer;
 `
+export const SliderPagination = styled.div`
+    position:absolute;
+    top:50%;
+    left:auto;
+    right:0px;
+    width:auto;
+
+    transform:translate(0,-50%);
+
+`;
+
+export const PaginationItem = styled.div`
+    position:relative;
+    width: 12px;
+    height: 12px;
+
+    background:${props => props.on ? "#1A2CAD" : "#00000012"};
+    border: 1px solid #1A2CAD42;
+
+    transition:all 100ms ease;
+
+    border-radius:50%;
+    margin-bottom:20px;
+`
+
+export const PaginationTitle = styled.span`
+    position:absolute;
+    display:inline;
+    top:-3px;
+    left:auto;
+    right:100%;
+    margin-right:10px;
+    font-size:14px;
+    font-weight:bold;
+    letter-spacing: -1.44px;
+    text-transform: uppercase;
+    color:#1A2CAD;
+
+    opacity:${props => props.on ? "1" : "0.3"};
+    
+    transition:all 100ms ease;
+
+    white-space:nowrap;
+
+    & br{
+        display:none;
+        
+    }
+`
+
+export const ScrollMarkerPosition = styled.div`
+    position:absolute;
+    display:block;
+
+    width:100%;
+    height:auto;
+
+    top:-180px;
+    left:0;
+`;
