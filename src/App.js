@@ -21,7 +21,7 @@ const App = () => {
   return (
     <Provider store={store}>
       {/*<PersistGate loading={null} persistor={persistor}>*/}
-          <Header/>
+        <Header/>
         <Scroll>
           <Content_Header/>
           <Content_Slider/>

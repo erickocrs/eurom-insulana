@@ -13,14 +13,19 @@ export const Row = styled.div`
     };
     
     align-items:${
-        props => props.center ? "center" : (props.right ? "flex-start" : props.left ? "flex-start" : "space-between" )
+        props => props.center ? "center" : (props.right ? "flex-end" : props.left ? "flex-start" : "space-between" )
     };
 
 
     width:100%;
-    max-width:1640px;
+    max-width:1660px;
 
-    padding: 0 20px;
+    padding: 0 10px;
+    box-sizing:border-box;
+    
+    @media(max-width: 1024px) {
+        flex-direction: column;
+    }
     
 `;
 

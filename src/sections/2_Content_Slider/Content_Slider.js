@@ -117,6 +117,7 @@ export const Content_Slider = () => {
                                 {sliderList.map((slide, i) => {
                                     return (
                                         <Slide on={slide.on}>
+                                            <Row left>
                                             <ScrollMarkerPosition>
                                                 <ScrollMarker absolute markerName={"Slider-" + i}/>                                                  
                                             </ScrollMarkerPosition>
@@ -132,6 +133,7 @@ export const Content_Slider = () => {
                                                 <TextLink  on={slide.on}>{slide.linkText}</TextLink>
                                                 <Button  on={slide.on}>{slide.buttonText}</Button>
                                             </Infos>    
+                                            </Row>
                                         </Slide>       
                                         
                                     )

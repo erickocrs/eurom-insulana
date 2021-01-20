@@ -60,7 +60,7 @@ export const Scroll = (props) => {
         setTimeout(() => setIsScrollingLock(false),700);
 
         let newScrollTop = 0;
-
+        
         newScrollTop = getScrollTopY(scrollReducer.targetList[newTarget].markerRef.current);
         
         newScrollTop = isTopEnd(newScrollTop);
@@ -94,19 +94,86 @@ export const Scroll = (props) => {
       scrollToTargetNumber(newTarget);
     };
 
+    const onKeyUp = e => {
+      
+      let newTarget = null;
+
+      if((
+        e.keyCode == 40 ||
+        e.keyCode == 34 ||
+        e.keyCode == 32 ||
+        e.keyCode == 13 ) && isScrollTargetMax())//to down
+      {
+        newTarget = scrollReducer.currentTarget + 1;
+        scrollToTargetNumber(newTarget);
+      }
+      
+      if((
+        e.keyCode == 38 ||
+        e.keyCode == 33) && isScrollTargetMin())//to up
+      {        
+        newTarget = scrollReducer.currentTarget - 1;
+        scrollToTargetNumber(newTarget);
+      }      
+      
+      if(e.keyCode == 36){//to home
+        newTarget = 0;
+        scrollToTargetNumber(newTarget);
+      }
+
+      
+      if(e.keyCode == 35){//to end
+        newTarget = scrollReducer.targetList.length -1;
+        scrollToTargetNumber(newTarget);
+      }
+    };
+
+    let touchMoves = [];
+    const onTouchStart = (e) => {
+      touchMoves = [];
+    }
+
+    const onTouchMove = (e) => {
+      touchMoves.push(e.touches[0].clientY);
+    }
+
+    const onTouchEnd = (e) => {
+      let newTarget = null;
+
+      if(touchMoves.length > 0){
+        if(touchMoves[1] < touchMoves[0] && isScrollTargetMax()) {
+          newTarget = scrollReducer.currentTarget + 1;
+          scrollToTargetNumber(newTarget);
+        }
+        
+        if(touchMoves[0] < touchMoves[1] && isScrollTargetMin()) {
+          newTarget = scrollReducer.currentTarget - 1;
+          scrollToTargetNumber(newTarget);        
+        }
+      }      
+
+      touchMoves = [];
+    }
 
     return(
-        <Container
-        ref={containerRef}
-        onWheel={onWheel}
-        scrollY={scrollY}>
-            {props.children}
+        <Container 
+          tabIndex="0"
+          ref={containerRef}
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+          onWheel={onWheel}
+          onKeyUp={onKeyUp}
+          
+          scrollY={scrollY}>
+          {props.children}
         </Container>
     )
 }
 
 const Container = styled.div`
   display:block;
+  width:100%;
   transform:${props => props.scrollY ? `translate(0px,${props.scrollY}px)` : 'translate(0px,0px)'};
   transition:all 1500ms ease;
 `;

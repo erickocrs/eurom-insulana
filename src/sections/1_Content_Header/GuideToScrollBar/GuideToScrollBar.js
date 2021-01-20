@@ -21,6 +21,7 @@ export const GuideToScrollBar = () => {
 
 const GuideToScroll = styled.div`
     position: relative;
+    display:flex;
 
     width:48px;
     height:88px;
@@ -28,8 +29,14 @@ const GuideToScroll = styled.div`
     background-position: center center;
     background-repeat: no-repeat;
     background-image:${ props => "url('" + props.backgroundImg + "')" };
+    background-size:contain;
 
     margin-top:-86px;
+    @media(max-width: 1024px) {
+        margin-top:-15px;
+        width:30px;
+        height:55px;
+    }
 `;
 
 const arrowAnimation = keyframes`
@@ -44,6 +51,11 @@ const GuideToScrollArrow = styled.img`
     left:calc(50% - 7.5px);
 
     animation:${ arrowAnimation } ease 1000ms infinite;
+    @media(max-width: 1024px) {
+        top:10px;    
+        left:calc(50% - 5px);
+        width:10px;
+    }
 `;
 
 

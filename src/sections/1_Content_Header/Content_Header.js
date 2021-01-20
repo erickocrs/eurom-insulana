@@ -6,6 +6,7 @@ import GuideToScrollBar from './GuideToScrollBar/GuideToScrollBar'
 import SocialNetworkIcons from './SocialNetworkIcons/SocialNetworkIcons'
 import {
   Row,
+  ContentRow,
   ContentHeaderSection,
   ContentImage,
   ImageContainer,
@@ -35,7 +36,7 @@ export const ContentHeader = () => {
     return (
         <ScrollMarker markerName="Header">
           <ContentHeaderSection>
-            <Row left>
+            <ContentRow center>
               <ImageContainer>
                 <ContentImage className="ContentImage" src={ContentImageSrc}/>
                 <LightLeak animate={animate}/>
@@ -44,12 +45,12 @@ export const ContentHeader = () => {
                   <Text className="Text" animate={animate}>As mais avançadas soluções de <strong>higienização Covid-19</strong>.</Text>
                   <Button className="Button" animate={animate}>Descubra mais</Button>
               </ContentText>
+            </ContentRow>
+            <Row center>
+              <GuideToScrollBar/>
             </Row>
             <Row right>
               <SocialNetworkIcons/>
-            </Row>
-            <Row center>
-              <GuideToScrollBar/>
             </Row>
           </ContentHeaderSection>
         </ScrollMarker>

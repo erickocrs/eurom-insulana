@@ -10,6 +10,11 @@ export const Col = styled.div`
     width:100%;
 
     box-sizing:border-box;
+
+    
+    @media(max-width: 1024px) {
+        width:100%!important;
+    }
 `;
 
 export default Col;

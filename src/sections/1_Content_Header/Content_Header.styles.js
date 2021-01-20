@@ -1,18 +1,43 @@
 import styled, { keyframes } from 'styled-components'
 import RowComponent from '~/components/Row/Row'
+import ColComponent from '~/components/Col/Col'
 import LightLeakSrc from '~/assets/images/light-leak.png'
 
 export const ContentHeaderSection = styled.section`
   padding-top:98px;
+  min-height:100vh;
+  
+  align-items:center;
+  justify-content:center;
+
+  box-sizing:border-box;
+`;
+
+export const ContentRow = styled(RowComponent)`
+  min-height:75vh;
+`;
+
+export const Row = styled(RowComponent)`
+  
+`;
+
+export const ImageContainer = styled(ColComponent)`
+  position:relative;
+  justify-content:center;
+
+  width:calc(100%/12*8);
 `;
 
 export const ContentImage = styled.img`
-  //margin:118px 0 0 0px;
-  margin:20px 0 0 0px;
-`;
-
-export const ImageContainer = styled.div`
-  position:relative;
+  width:auto;  
+  max-width:calc(100% + 20px);
+  margin:10px 0 0 20px;   
+    max-height:80vh;
+  
+  @media(max-width: 1024px) {
+    max-height:40vh;
+    margin:-30px 0 0 0 ;   
+  }
 `;
 
 export const LightLeak = styled.div`
@@ -30,25 +55,30 @@ export const LightLeak = styled.div`
 `;
 
 const lightAnimation = keyframes`
- 0% { transform:translate(110px,0) rotate(-17deg) scale(.7); opacity:0;}
- 11% {transform:translate(1px,7px) rotate(-17deg) scale(.8); opacity:0.35;}
- 34% { transform:translate(-40px,20px) rotate(-10deg) scale(.8); opacity:0;}
- 100% { transform:translate(-40px,20px) rotate(-10deg) scale(.8); opacity:0;}
+  0% { transform:translate(110px,0) rotate(-17deg) scale(.7); opacity:0;}
+  11% {transform:translate(1px,7px) rotate(-17deg) scale(.8); opacity:0.35;}
+  34% { transform:translate(-40px,20px) rotate(-10deg) scale(.8); opacity:0;}
+  100% { transform:translate(-40px,20px) rotate(-10deg) scale(.8); opacity:0;}
 `
 
-export const ContentText = styled.div`
+export const ContentText = styled(ColComponent)`
   display:flex;
 
+  width:calc(100%/12*6);
+
   flex-direction: column;
+  justify-content: center;
   align-items:flex-start;
-  justify-content: flex-start;
   
-  padding-left:63px;
-`;
+  padding:0 30px 0 83px; 
+  margin:-23px 0 0 0;   
 
-
-export const Row = styled(RowComponent)`
-  align-items:center;
+  box-sizing:border-box;
+  
+  @media(max-width: 1024px) {
+    padding:0px;  
+    align-items:center;
+  }
 `;
 
 export const Text = styled.h2`
@@ -66,6 +96,26 @@ export const Text = styled.h2`
   transform: ${props => props.animate ? 
   "translate(0,0)" :
   "translate(0,100px)"};
+  
+  @media(max-width: 1600px) {
+    font-size:36px;
+  }
+  
+  @media(max-width: 1300px) {    
+    font-size:30px;
+  }
+
+  @media(max-width: 1024px) {
+    max-width:450px;
+    text-align:center;
+    font-size:26px;
+    margin-bottom: 10px;
+    margin-top:15px;
+
+  }
+  @media(max-width: 700px) {
+    font-size:22px;
+  }
 
   transition:all 1500ms ease;
 `;
@@ -101,6 +151,14 @@ export const Button = styled.div`
         transition:all 100ms ease;
     }
 
-    cursor: pointer;
+  cursor: pointer;
+
+  @media(max-width: 1024px) {
+    width:200px;
+    height:52px;    
+  }
+  @media(max-width: 700px) {
+    font-size:16px;
+  }
 
 `;
