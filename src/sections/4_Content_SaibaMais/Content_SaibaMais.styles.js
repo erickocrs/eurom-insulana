@@ -59,6 +59,10 @@ export const BlueCircle = styled.div`
         width: 150%;
         height: 0;
         padding-bottom:150%;
+            
+        transform: ${props => props.animate ? 
+        "translate(0,0) scale(1) " :
+        "translate(250px,0) scale(1.1) "};
     }
 `;
 
@@ -151,6 +155,10 @@ export const Button = styled.a`
         height:42px;
         font-size:16px;
         margin-top:10px;
+            
+        transform: ${props => props.animate ?     
+        "translate(0,0) scale(1) " :
+        "translate(-250px,0) scale(.9) "};        
     }
 `;
 
@@ -223,6 +231,10 @@ export const BlueCircleDesign = styled.div`
         height:0;
 
         padding-bottom:80.2%;
+            
+        transform: ${props => props.animate ? 
+        "translate(0,0) scale(1) " :
+        "translate(0,0) scale(.5) "};
     }
 
     @media (max-width:1024px){
@@ -262,6 +274,10 @@ export const WhiteCircleDesign = styled.div`
         height:0;
 
         padding-bottom:80.2%;
+
+        transform: ${props => props.animate ? 
+        "translate(0,0) scale(1) " :
+        "translate(0,0) scale(.5) "};
     }
 
     @media (max-width:1024px){
@@ -297,10 +313,15 @@ export const LineCircleDesign = styled.div`
     @media (max-width:1400px){
         top: -2%;
         left: calc(10% + 20px);
+        
         width:80.2%;
         height:0;
 
         padding-bottom:80.2%;
+        
+        transform: ${props => props.animate ? 
+        "translate(0,0) scale(1) " :
+        "translate(0,0) scale(.5) "};
     }
 
     @media (max-width:1024px){

@@ -8,6 +8,11 @@ export const Infos = styled.div`
     position:relative;
     width:${100/12*4+"%"};
     margin-left:${100/12*1+"%"};
+    
+    @media (max-width:1024px){
+        width:100%;
+        margin-left:10px;
+    }
 `;
 
 export const BlueCircle = styled.div`
@@ -30,9 +35,22 @@ export const BlueCircle = styled.div`
     "translate(-70px,0) rotateX(-30deg) rotateY(-15deg) "};
 
     transition:all 2150ms ease;
+    
+    @media (max-width:1024px){
+        top: -140%;
+        left:-27%;
+
+        width: 130%;
+        height: 0;
+        padding-bottom:131%;
+            
+        transform: ${props => props.animate ? 
+        "translate(0,0) scale(1) " :
+        "translate(100px,-100px) scale(.9) "};
+    }
 `;
 
-export const Title = styled.div`
+export const Title = styled.h2`
     font-size:36px;
     font-weight:700;
     letter-spacing: -1.8px;
@@ -45,9 +63,14 @@ export const Title = styled.div`
     "translate(-250px,0)"};
 
     transition:all 2100ms ease;
+    
+    @media (max-width:1024px){
+        font-size:24px;
+        margin-bottom:5px;
+    }
 `;
 
-export const Text = styled.div`
+export const Text = styled.h3`
     max-width:450px;
 
     font-size:25px;
@@ -63,9 +86,14 @@ export const Text = styled.div`
     "translate(-275px,0)"};
 
     transition:all 2300ms ease;
+    
+    @media (max-width:1024px){
+        font-size:18px;
+        margin-bottom:5px;
+    }
 `;
 
-export const Button = styled.div`    
+export const Button = styled.a`    
     display:flex;    
     align-items:center;
     justify-content:center;
@@ -100,6 +128,18 @@ export const Button = styled.div`
     }
 
     cursor: pointer;
+    
+    @media (max-width:1024px){
+
+        width: 240px;
+        height: 42px;
+        font-size:16px;
+        margin:15px 0 0 0;
+            
+        transform: ${props => props.animate ?     
+        "translate(0,0)  " :
+        "translate(-225px,0)  "};
+    }
         
 `;
 
@@ -113,6 +153,16 @@ export const ClientList = styled.div`
     width:100%;
     max-width:605px;
     margin-left:${100/12*1+"%"};
+    
+    @media (max-width:1024px){
+        margin-top:25%;
+        margin-left:0;
+        max-width:100%;
+    }
+    
+    @media (max-width:700px){
+        max-width:100%;
+    }
 `;
 
 export const ClientBox = styled.div`
@@ -123,6 +173,12 @@ export const ClientBox = styled.div`
     width:calc(100%/3); 
     height:100px;
     margin-bottom:51px;
+    
+    @media (max-width:1024px){
+        width:calc(100%/6); 
+        height:50px;
+        margin-bottom:5px;
+    }
 `;
 
 export const ClientLogo = styled.img`   
@@ -134,6 +190,14 @@ export const ClientLogo = styled.img`
     "translate(0,225px) rotateX(-30deg) rotateY(-15deg) "};
 
     transition:${props => props.delay ? "all 2600ms ease " + props.delay + "ms" : "2600ms 0ms"};
+    
+    @media (max-width:1024px){
+        max-width:100%;
+        
+        transform: ${props => props.animate ?     
+        "translate(0,0) scale(1) " :
+        "translate(225px,0) scale(.7) "};
+    }
 `;
 
 export const ScrollMarkerPosition = styled.div`
@@ -145,4 +209,7 @@ export const ScrollMarkerPosition = styled.div`
 
     top:170px;
     left:0;
+    @media (max-width:1024px){
+        top:270px;
+    }
 `;

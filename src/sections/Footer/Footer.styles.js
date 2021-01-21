@@ -81,6 +81,10 @@ export const SubInfos =  styled(RowComponent)`
     align-items:center;
     justify-content:center;
     padding:65px 0 36px;
+    
+    @media (max-width:1024px){
+        flex-direction:column;
+    }
 `;
 
 export const Link = styled.a`
@@ -91,6 +95,12 @@ export const Link = styled.a`
     text-decoration:underline;
     letter-spacing: 0px;
     margin-left:-10px;
+    
+    
+    @media (max-width:1024px){
+        text-align:center;
+        margin-left:0px;
+    }
 `
 
 export const LinkCookies = styled.a`
@@ -101,6 +111,11 @@ export const LinkCookies = styled.a`
     text-decoration:underline;
     letter-spacing: 0px;
     padding-left:5px;
+    
+    @media (max-width:1024px){
+        text-align:center;
+        padding-left:0px;
+    }
 
 `
 
@@ -111,4 +126,9 @@ export const Copyright = styled.span`
     color:#ffffff;
     letter-spacing: 0px;
     margin:0 167px;
+    
+    @media (max-width:1024px){
+        text-align:center;
+        margin:5px 0;
+    }
 `
