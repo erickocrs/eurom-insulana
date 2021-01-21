@@ -18,9 +18,8 @@ export const Row = styled.div`
 
 
     width:100%;
-    max-width:1660px;
-
-    padding: 0 10px;
+    max-width:calc(1640px + 12px + 12px);
+    padding: 0 12px;
     box-sizing:border-box;
     
     @media(max-width: 1024px) {

@@ -1,7 +1,20 @@
 import styled from 'styled-components'
 import RowComponent from '~/components/Row/Row.js'
 
-export const Row = styled(RowComponent)``;
+export const Row = styled(RowComponent)`
+
+    max-width:calc(1640px + 40px + 40px);
+    padding: 0 40px 0 40px;
+    box-sizing:border-box;
+    
+    @media(max-width: 1024px) {
+        flex-direction:row;
+    }
+
+    @media(max-width: 350px) {
+        padding: 0 20px 0 25px;
+    }
+`;
 
 export const HeaderSection = styled.header`
     position:fixed;
@@ -38,6 +51,11 @@ export const LogoLink = styled.a`
 
 export const Logo = styled.img`
     margin: 5px 0px 0px 0px;
+    
+    @media(max-width: 350px) {
+        width:170px;
+        margin: 9px 0px 0px 0px;
+    }
 `;
 
 export const ButtonFreeQuote = styled.div`
@@ -68,6 +86,10 @@ export const ButtonFreeQuote = styled.div`
     transition:all 100ms ease;
     
     cursor: pointer;
+
+    @media(max-width: 1024px) {
+        display:none;
+    }
 `;
 
 export const ButtonOpenMenu = styled.div`

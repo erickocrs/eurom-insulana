@@ -11,11 +11,13 @@ SliderCarrousel,
 Slide,
 Infos,
 ContainerImage,
+ImageBox,
 Image,
 Title,
 Text,
 TextLink,
 Button,
+CircleDesigns,
 BlueCircleDesign,
 WhiteCircleDesign,
 LineCircleDesign,
@@ -37,6 +39,7 @@ export const Content_Slider = () => {
         {
             image : imageLimpezaGerais,
             title : "LIMPEZA E HIGIENE GERAL",
+            title : (<>LIMPEZA<br/> E HIGIENE GERAL</>),
             text : "A melhor limpeza e higienização está ao seu alcance, qualquer que seja a dimensão do seu negócio.",
             linkText : "Saiba mais",
             buttonText : "Peça-nos um orçamento",
@@ -118,21 +121,25 @@ export const Content_Slider = () => {
                                     return (
                                         <Slide on={slide.on}>
                                             <Row left>
-                                            <ScrollMarkerPosition>
-                                                <ScrollMarker absolute markerName={"Slider-" + i}/>                                                  
-                                            </ScrollMarkerPosition>
-                                            <ContainerImage  on={slide.on}>
-                                                <Image src={slide.image}/>
-                                                <BlueCircleDesign  on={slide.on}/>
-                                                <WhiteCircleDesign  on={slide.on}/>
-                                                <LineCircleDesign  on={slide.on}/>
-                                            </ContainerImage>
-                                            <Infos>
-                                                <Title  on={slide.on}>{slide.title}</Title>
-                                                <Text  on={slide.on}>{slide.text}</Text>
-                                                <TextLink  on={slide.on}>{slide.linkText}</TextLink>
-                                                <Button  on={slide.on}>{slide.buttonText}</Button>
-                                            </Infos>    
+                                                <ScrollMarkerPosition>
+                                                    <ScrollMarker absolute markerName={"Slider-" + i}/>                                                  
+                                                </ScrollMarkerPosition>
+                                                <ContainerImage  on={slide.on}>
+                                                    <ImageBox>
+                                                        <CircleDesigns i={i}>
+                                                            <BlueCircleDesign  on={slide.on}/>
+                                                            <WhiteCircleDesign  on={slide.on}/>
+                                                            <LineCircleDesign  on={slide.on}/>
+                                                        </CircleDesigns>
+                                                        <Image src={slide.image}/>
+                                                    </ImageBox>
+                                                </ContainerImage>
+                                                <Infos>
+                                                    <Title  on={slide.on}>{slide.title}</Title>
+                                                    <Text  on={slide.on}>{slide.text}</Text>
+                                                    <TextLink  on={slide.on}>{slide.linkText}</TextLink>
+                                                    <Button  on={slide.on}>{slide.buttonText}</Button>
+                                                </Infos>    
                                             </Row>
                                         </Slide>       
                                         

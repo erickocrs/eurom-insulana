@@ -41,7 +41,15 @@ export const Slide = styled.div`
     align-items:flex-start;
     justify-content:center;
 
-    opacity:${props => props.on ? "1" : "0"};  
+    opacity:0;
+    z-index:-2;
+    visibility:hidden;
+      
+    ${props => props.on && `
+        opacity:1;
+        z-index:1;
+        visibility:visible;
+    `};  
     transition:all 500ms ease;
 `
 
@@ -61,26 +69,69 @@ export const ContainerImage = styled(Col)`
 
     z-index:0;
 
-    opacity:${props => props.on ? "1" : "0"};  
-    transform: ${props => props.on ? 
-    "translate(0,0) rotateX(00deg) rotateY(00deg) " :
-    "translate(0,100px) rotateX(30deg) rotateY(10deg) "};
+    opacity:0;  
+    ${props => props.on && `
+        opacity:1;  
+    `};
+    
+    transform:translate(0,100px) rotateX(30deg) rotateY(10deg);
+    ${props => props.on && `
+        transform:translate(0,0) rotateX(00deg) rotateY(00deg);
+    `};
 
     transition:all 1500ms ease;
+        
+    @media(max-width: 1024px) {
+        position:absolute;
+        top:-10%;
+        left:-40%;
+    }
 `
 
-export const Image = styled.img`
-    display:block;
+export const ImageBox = styled.div`
+    position:relative;
+    width:auto;
+    max-width:100%;
     margin-right:15px;
+    
+    z-index:0;
+`;
+
+export const CircleDesigns = styled.div`
+    position:absolute;
+    display:block;
+    width:100%;
+    height:100%;
+    max-width:621px;
+
+    top:50%;
+    left:50%;
+
+    ${props => props.i == 2 && `
+        left:54%;
+    `};
+
+    transform:translate(-50%,-50%);
+
+    z-index:-1;
+`;
+
+
+export const Image = styled.img`
+
+    @media(max-width: 1024px) {
+        max-width:400px;
+    }
     
 `
 
 export const BlueCircleDesign = styled.div`
     position:absolute;
-    top:calc(50% - 306px - 25px);
-    left:calc(50% - 306px + 83px);
-    width:612px;
-    height:612px;
+    top:9%;
+    left:-8%;
+    width:98.55%;
+    height:0;
+    padding-bottom:98.55%;
     background:#183BB3;
     opacity:.93;
     
@@ -97,10 +148,11 @@ export const BlueCircleDesign = styled.div`
 
 export const WhiteCircleDesign = styled.div`
     position:absolute;
-    top: calc(50% - 306px - 34px);
-    left: calc(50% - 306px + 202px);
-    width:612px;
-    height:612px;
+    top:9%;
+    left:12%;
+    width:98.55%;
+    height:0;
+    padding-bottom:98.55%;
     background: transparent linear-gradient(321deg, #FFFFFF 0%, #CEDFF1 100%) 0% 0% no-repeat padding-box;
     box-shadow: 3px 13px 21px #0000000F;
     opacity:.93;
@@ -119,10 +171,11 @@ export const WhiteCircleDesign = styled.div`
 
 export const LineCircleDesign = styled.div`
     position:absolute;
-    top: calc(50% - 287px - 103px);
-    left: calc(50% - 287px + 205px);
-    width: 595px;
-    height: 596px;
+    top:0;
+    left:14%;
+    width: 95.81%;
+    height:0;
+    padding-bottom:95.95%;
     
     box-shadow: 1px 0px 1px 0px #2e3d6d;
 
