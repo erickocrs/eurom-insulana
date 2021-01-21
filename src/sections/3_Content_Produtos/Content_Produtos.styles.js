@@ -7,8 +7,11 @@ export const Section = styled.section`
     margin-bottom:25.5%;
     z-index:0;
 
-    background:${props => props.animate ? "red" : ""};
     transition:all 2000ms ease;
+    
+    @media (max-width:1024px){
+        padding:0 0;
+    }
 `;
 
 export const Infos = styled(Col)`
@@ -20,6 +23,18 @@ export const Infos = styled(Col)`
     padding-left:4.2%;
     
     z-index:0;
+    
+    @media (max-width:1024px){
+        margin-top:10%;
+        min-height:100vh;
+        padding-top:98px;
+        box-sizing:border-box;
+    }
+`;
+
+export const Texts = styled.div`
+    position:relative;
+    width:auto;
 `;
 
 export const BlueCircle = styled.div`
@@ -31,6 +46,16 @@ export const BlueCircle = styled.div`
     width:1120px;
     height:1075px;
 
+    @media (max-width:1024px){
+        top:-65%;
+        left:-40%;
+
+        width:160%;
+        height:0;
+        
+        padding-bottom:155%;
+    }
+
     background:#1A2CAD;
     border-radius:50%;
     
@@ -38,13 +63,19 @@ export const BlueCircle = styled.div`
     transform: ${props => props.animate ? 
     "translate(0,0) rotateX(0deg) rotateY(0deg) " :
     "translate(-50px,0) rotateX(-50deg) rotateY(-15deg) "};
+    
+    @media (max-width:1024px){
+        transform: ${props => props.animate ? 
+        "translate(0,0) scale(1) " :
+        "translate(-50px,0) scale(.7) "};
+    }
 
     transition:all 2000ms ease;
 
     z-index:-1;
 `;
 
-export const Title = styled.div`
+export const Title = styled.h2`
     max-width:410px;
     margin-bottom:17px;
 
@@ -60,15 +91,19 @@ export const Title = styled.div`
 
     transition:all 2500ms ease;
 
+    @media (max-width:1024px){
+        max-width:300px;
+        font-size:26px;    
+        margin-bottom:12px;
+    }
 `;
 
-export const Text = styled.div`
+export const Text = styled.h3`
     color:#FFFFFF;
     font-size:25px; 
     font-weight:normal;    
     letter-spacing: 0px;
-    max-width:450px;
-    
+    max-width:450px;    
     
     opacity:${props => props.animate ? "1" : "0"};  
     transform: ${props => props.animate ? 
@@ -76,9 +111,14 @@ export const Text = styled.div`
     "translate(275px,0)"};
 
     transition:all 2500ms ease;
+    
+    @media (max-width:1024px){
+        max-width:300px;
+        font-size:18px; 
+    }
 `;
 
-export const Button = styled.div`
+export const Button = styled.a`
     display:flex;
     align-items:center;
     justify-content:center;
@@ -99,13 +139,18 @@ export const Button = styled.div`
     font-size:19px;
     font-family:'Montserrat';
     letter-spacing:0px;
-    font-weight: 600;
-    
+    font-weight: 600;    
     
     opacity:${props => props.animate ? "1" : "0"};  
     transform: ${props => props.animate ? 
     "translate(0,0) rotateX(00deg) rotateY(00deg) " :
     "translate(250px,0) rotateX(30deg) rotateY(15deg) "};
+
+    @media (max-width:1024px){
+        transform: ${props => props.animate ? 
+            "translate(0,0) scale(1)" :
+            "translate(250px,0) scale(.8) "};
+    }
 
     transition:all 2700ms ease;
         
@@ -115,6 +160,14 @@ export const Button = styled.div`
     }
 
     cursor: pointer;
+    
+    @media (max-width:1024px){
+        width:250px;
+        height:42px;
+        font-size:14px;   
+
+        margin:15px 0 0 0;
+    }
 `;
 
 export const ImageBox = styled(Col)`
@@ -124,9 +177,19 @@ export const ImageBox = styled(Col)`
     margin-top:104px;
     z-index:1;
     
+    @media (max-width:1024px){
+        position:absolute;
+        top:auto;
+        left:auto;
+        bottom:0;
+        right:0;
+        
+        margin-top:0px;
+    }
 `;
 
 export const Image = styled.img`
+    max-width:100%;
     margin:0 0 0 60px;
     
     opacity:${props => props.animate ? "1" : "0.7"};  
@@ -136,9 +199,16 @@ export const Image = styled.img`
 
     transition:all 3700ms ease;
     z-index:1;
+    
+    @media (max-width:1024px){
+        max-width:80%;
+        max-height:50vh;
+    }
 `;
 
 export const ImageSmaller = styled.img`
+    max-width:50%;
+    
     margin:0 0 -4% -23%;
     opacity:${props => props.animate ? "1" : "0.7"};  
     transform: ${props => props.animate ? 
@@ -147,4 +217,9 @@ export const ImageSmaller = styled.img`
 
     transition:all 3500ms ease;
     z-index:1;
+    
+    @media (max-width:1024px){
+        max-width:35%;
+        max-height:40vh;
+    }
 `;

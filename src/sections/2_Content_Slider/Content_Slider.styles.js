@@ -157,9 +157,12 @@ export const ContainerImage = styled(Col)`
 
 export const Image = styled.img`
 
+    max-height:85vh;
     @media(max-width: 1024px) {
-        max-width:370px;
+        max-width:100%;
+        max-height:85vh;
     }
+
     
 `
 
@@ -168,6 +171,7 @@ export const ImageBox = styled.div`
     width:auto;
     max-width:100%;
     margin-right:15px;
+
 `;
 
 export const Title = styled.h2`    
@@ -356,7 +360,7 @@ export const PaginationTitle = styled.span`
         
     }
     
-    @media(max-width: 1024px) {
+    @media(max-width: 1750px) {
         display:none;
     }
 `

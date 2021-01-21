@@ -108,6 +108,7 @@ export const LineCircleDesign = styled.div`
 
 export const CircleTextDesign = styled.div`
     position:absolute;
+    display:none;
     top:36%;
     left:auto;
     right:-110%;
@@ -129,4 +130,7 @@ export const CircleTextDesign = styled.div`
         transform:translate(-50%,-50%) scale(1);
     `};
 
+    @media(max-width: 500px) {
+        display:block;
+    }
 `

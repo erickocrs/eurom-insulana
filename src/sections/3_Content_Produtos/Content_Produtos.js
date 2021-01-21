@@ -5,6 +5,7 @@ import {
 BlueCircle,
 Section,
 Infos,
+Texts,
 Title,
 Text,
 Button,
@@ -33,23 +34,24 @@ export const Content_Produtos = () => {
         
     }, [scrollReducer]);
 
-    return(
-        <ScrollMarker markerName="Produtos">
-            <Section>
-                <Row left>
-                    <Infos animate={animate}>
+    return(        
+        <Section>
+            <ScrollMarker absolute markerName="Produtos"/>
+            <Row left>
+                <Infos animate={animate}>
+                    <Texts>
                         <BlueCircle animate={animate}/>
                         <Title animate={animate}>Produtos e equipamentos de última geração.</Title>
                         <Text animate={animate}>Para venda ao público ou para utilização na sua empresa.</Text>
                         <Button animate={animate}>Encontre o que procura</Button>       
-                    </Infos>
-                    <ImageBox>
-                        <Image animate={animate} src={imageSrc}/>
-                        <ImageSmaller animate={animate} src={imageSmallerSrc}/>
-                    </ImageBox>
-                </Row>
-            </Section>
-        </ScrollMarker>
+                    </Texts>
+                </Infos>
+                <ImageBox>
+                    <Image animate={animate} src={imageSrc}/>
+                    <ImageSmaller animate={animate} src={imageSmallerSrc}/>
+                </ImageBox>
+            </Row>
+        </Section>
     )
 }
 

@@ -1,7 +1,11 @@
 import styled from 'styled-components'
+import RowC from '~/components/Row/Row'
 
 export const Section = styled.section`
     padding:0 0 250px;
+`;
+
+export const Row = styled(RowC)`
 `;
 
 export const Infos = styled.div`
@@ -9,6 +13,21 @@ export const Infos = styled.div`
     margin-top:16%;
     padding-left:9%;
     width:${100/12*5+"%"};
+    
+    @media (max-width:1024px){
+        margin-top:-0%;
+        padding:0 5% 0;
+        width:100%;
+
+
+        display:flex;
+        flex-direction:column;
+        align-items:flex-end;
+
+        text-align:right;
+
+        box-sizing:border-box;
+    }
 `;
 
 export const BlueCircle = styled.div`
@@ -31,10 +50,20 @@ export const BlueCircle = styled.div`
     "translate(250px,0) rotateX(30deg) rotateY(15deg) "};
 
     transition:all 2200ms ease;
+    
+    @media (max-width:1024px){
+        
+        top: -80%;
+        left: -10%;
+        
+        width: 150%;
+        height: 0;
+        padding-bottom:150%;
+    }
 `;
 
 
-export const Title = styled.div`
+export const Title = styled.h2`
     margin-bottom:18px;
 
     font-size:36px;
@@ -48,9 +77,16 @@ export const Title = styled.div`
     "translate(-200px,0)"};
 
     transition:all 2000ms ease;
+    
+    @media (max-width:1024px){
+        margin-bottom:5px;
+
+        font-size:26px;
+        max-width:200px;
+    }
 `;
 
-export const Text = styled.div`
+export const Text = styled.h3`
     max-width:400px;
     margin-bottom:20px;
 
@@ -65,9 +101,18 @@ export const Text = styled.div`
     "translate(-275px,0)"};
 
     transition:all 2100ms ease;
+    
+    @media (max-width:1024px){   
+
+        font-size:18px;
+
+        margin-bottom:5px;
+
+        max-width:300px;
+    }
 `;
 
-export const Button = styled.div`
+export const Button = styled.a`
     margin-top:43px;
 
     display:flex;   
@@ -101,6 +146,12 @@ export const Button = styled.div`
     }
 
     cursor: pointer;
+    @media (max-width:1024px){   
+        width:190px;
+        height:42px;
+        font-size:16px;
+        margin-top:10px;
+    }
 `;
 
 export const ImageContainer = styled.div`
@@ -118,11 +169,30 @@ export const ImageContainer = styled.div`
 export const ImageBox = styled.div`
     width:${100/12*5+"%"};
     margin-left:${100/12*2+"%"};
+
+
+    @media (max-width:1024px){
+        width:100%;
+        max-width:500px;
+        margin-left:0;
+    }
+    
 `;
 
 export const Image = styled.img`
     display:block;
     margin-left:-35px;
+    
+    @media (max-width:1400px){
+        max-width:550px;
+    }
+    @media (max-width:1024px){
+        max-width:100%;
+    }
+    
+    @media (max-width:700px){
+        max-width:260px;
+    }
 `;
 
 export const BlueCircleDesign = styled.div`
@@ -145,6 +215,22 @@ export const BlueCircleDesign = styled.div`
     "translate(0,0) rotateX(70deg) rotateY(30deg) "};
 
     transition:all 2150ms ease;
+    
+    @media (max-width:1400px){
+        top: 10%;
+        left: calc(-5% - 20px);
+        width:80.2%;
+        height:0;
+
+        padding-bottom:80.2%;
+    }
+
+    @media (max-width:1024px){
+        width:80.2%;
+        height:0;
+
+        padding-bottom:80.2%;
+    }
 `
 
 export const WhiteCircleDesign = styled.div`
@@ -168,6 +254,22 @@ export const WhiteCircleDesign = styled.div`
     "translate(0,0) rotateX(70deg) rotateY(10deg) "};
 
     transition:all 2150ms ease;
+    
+    @media (max-width:1400px){
+        top: 5%;
+        left: calc(15% + 20px);
+        width:80.2%;
+        height:0;
+
+        padding-bottom:80.2%;
+    }
+
+    @media (max-width:1024px){
+        width:80.2%;
+        height:0;
+
+        padding-bottom:80.2%;
+    }
 `
 
 export const LineCircleDesign = styled.div`
@@ -191,6 +293,22 @@ export const LineCircleDesign = styled.div`
     "translate(0,0) rotateX(70deg) rotateY(-30deg) "};
 
     transition:all 2150ms ease;
+    
+    @media (max-width:1400px){
+        top: -2%;
+        left: calc(10% + 20px);
+        width:80.2%;
+        height:0;
+
+        padding-bottom:80.2%;
+    }
+
+    @media (max-width:1024px){
+        width:80.2%;
+        height:0;
+
+        padding-bottom:80.2%;
+    }
 `   
 
 export const ScrollMarkerPosition = styled.div`
@@ -202,4 +320,8 @@ export const ScrollMarkerPosition = styled.div`
 
     top:-200px;
     left:0;
+    
+    @media (max-width:1024px){
+        top:-110px;
+    }
 `;

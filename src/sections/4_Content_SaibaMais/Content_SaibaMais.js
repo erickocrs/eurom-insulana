@@ -11,13 +11,13 @@ BlueCircle,
 ImageBox,
 ImageContainer,
 Image,
+Row,
 BlueCircleDesign,
 WhiteCircleDesign,
 LineCircleDesign,
 ScrollMarkerPosition
 } from './Content_SaibaMais.styles'
 import imageSrc from '~/assets/images/Quem_somos.png'
-import Row from '~/components/Row/Row'
 
 export const Content_SaibaMais = () => {
     
