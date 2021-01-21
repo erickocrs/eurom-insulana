@@ -33,27 +33,22 @@ export const ContentHeader = () => {
         
     }, [scrollReducer]);
     
-    return (
-        <ScrollMarker markerName="Header">
-          <ContentHeaderSection>
-            <ContentRow center>
-              <ImageContainer>
-                <ContentImage className="ContentImage" src={ContentImageSrc}/>
-                <LightLeak animate={animate}/>
-              </ImageContainer>
-              <ContentText className="ContentText">
-                  <Text className="Text" animate={animate}>As mais avançadas soluções de <strong>higienização Covid-19</strong>.</Text>
-                  <Button className="Button" animate={animate}>Descubra mais</Button>
-              </ContentText>
-            </ContentRow>
-            <Row center>
-              <GuideToScrollBar/>
-            </Row>
-            <Row right>
-              <SocialNetworkIcons/>
-            </Row>
-          </ContentHeaderSection>
-        </ScrollMarker>
+    return (        
+        <ContentHeaderSection>
+          <ScrollMarker absolute markerName="Header"/>
+          <GuideToScrollBar/>
+          <SocialNetworkIcons/>
+          <ContentRow center>
+            <ImageContainer>
+              <ContentImage className="ContentImage" src={ContentImageSrc}/>
+              <LightLeak animate={animate}/>
+            </ImageContainer>
+            <ContentText className="ContentText">
+                <Text className="Text" animate={animate}>As mais avançadas soluções de <strong>higienização Covid-19</strong>.</Text>
+                <Button className="Button" animate={animate}>Descubra mais</Button>
+            </ContentText>
+          </ContentRow>
+        </ContentHeaderSection>
     );
 }
 

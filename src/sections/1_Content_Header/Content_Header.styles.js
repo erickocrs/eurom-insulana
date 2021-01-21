@@ -4,8 +4,8 @@ import ColComponent from '~/components/Col/Col'
 import LightLeakSrc from '~/assets/images/light-leak.png'
 
 export const ContentHeaderSection = styled.section`
-  padding-top:98px;
   min-height:100vh;
+  min-height: -webkit-fill-available;
   
   align-items:center;
   justify-content:center;
@@ -14,7 +14,14 @@ export const ContentHeaderSection = styled.section`
 `;
 
 export const ContentRow = styled(RowComponent)`
-  min-height:75vh;
+  height:100vh;
+  min-height:-webkit-fill-available;
+  max-height:-webkit-fill-available;
+
+  padding-top:98px;
+
+  box-sizing:border-box;
+  z-index:1;
 `;
 
 export const Row = styled(RowComponent)`
@@ -32,11 +39,11 @@ export const ContentImage = styled.img`
   width:auto;  
   max-width:calc(100% + 20px);
   margin:10px 0 0 20px;   
-    max-height:80vh;
+  max-height:80vh;
   
   @media(max-width: 1024px) {
     max-height:40vh;
-    margin:-30px 0 0 0 ;   
+    margin:-45px 0 0 0 ;   
   }
 `;
 
@@ -115,6 +122,7 @@ export const Text = styled.h2`
   }
   @media(max-width: 700px) {
     font-size:22px;
+    margin-bottom: 5px;
   }
 
   transition:all 1500ms ease;

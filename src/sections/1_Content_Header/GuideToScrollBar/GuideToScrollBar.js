@@ -20,23 +20,41 @@ export const GuideToScrollBar = () => {
 }
 
 const GuideToScroll = styled.div`
-    position: relative;
+    position:absolute;
     display:flex;
+    flex-direction:column;
+
+    top:auto;
+    left:50%;
+    bottom:20px;
 
     width:48px;
     height:88px;
+
+    margin:0px 0 0 -24px;
 
     background-position: center center;
     background-repeat: no-repeat;
     background-image:${ props => "url('" + props.backgroundImg + "')" };
     background-size:contain;
 
-    margin-top:-86px;
+    z-index:0;
+
     @media(max-width: 1024px) {
-        margin-top:-15px;
         width:30px;
         height:55px;
+        
+        bottom:5px;
+        margin:0px 0 0 -15px;
     }
+        
+    @media(max-width: 700px) {
+        width:24px;
+        height:45px;
+        
+        margin:0px 0 0 -12px;
+    }
+    
 `;
 
 const arrowAnimation = keyframes`

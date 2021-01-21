@@ -8,6 +8,7 @@ Slider,
 SliderList,
 SliderCrop,
 SliderCarrousel,
+SlideRow,
 Slide,
 Infos,
 ContainerImage,
@@ -17,15 +18,18 @@ Title,
 Text,
 TextLink,
 Button,
-CircleDesigns,
-BlueCircleDesign,
-WhiteCircleDesign,
-LineCircleDesign,
 SliderPagination,
 PaginationItem,
 PaginationTitle,
 ScrollMarkerPosition
 } from './Content_Slider.styles.js'
+import {
+    CircleDesigns,
+    BlueCircleDesign,
+    WhiteCircleDesign,
+    LineCircleDesign,
+    CircleTextDesign
+} from './Content_Slider_Circles.styles.js'
 import imageLimpezaGerais from '~/assets/images/Limpezas_gerais.png'
 import imageLimpezaEspecializada from '~/assets/images/Limpeza_especializada.png'
 import imageServicoEntrega from '~/assets/images/Servico_entregas.png'
@@ -120,11 +124,11 @@ export const Content_Slider = () => {
                                 {sliderList.map((slide, i) => {
                                     return (
                                         <Slide on={slide.on}>
-                                            <Row left>
-                                                <ScrollMarkerPosition>
-                                                    <ScrollMarker absolute markerName={"Slider-" + i}/>                                                  
-                                                </ScrollMarkerPosition>
-                                                <ContainerImage  on={slide.on}>
+                                            <ScrollMarkerPosition>
+                                                <ScrollMarker absolute markerName={"Slider-" + i}/>                                                  
+                                            </ScrollMarkerPosition>
+                                            <SlideRow left>
+                                                <ContainerImage i={i} on={slide.on}>
                                                     <ImageBox>
                                                         <CircleDesigns i={i}>
                                                             <BlueCircleDesign  on={slide.on}/>
@@ -135,12 +139,13 @@ export const Content_Slider = () => {
                                                     </ImageBox>
                                                 </ContainerImage>
                                                 <Infos>
+                                                    <CircleTextDesign  on={slide.on}/>
                                                     <Title  on={slide.on}>{slide.title}</Title>
                                                     <Text  on={slide.on}>{slide.text}</Text>
                                                     <TextLink  on={slide.on}>{slide.linkText}</TextLink>
                                                     <Button  on={slide.on}>{slide.buttonText}</Button>
                                                 </Infos>    
-                                            </Row>
+                                            </SlideRow>
                                         </Slide>       
                                         
                                     )
@@ -155,7 +160,6 @@ export const Content_Slider = () => {
                                         </PaginationItem>
                                     )
                                 })}
-
                             </SliderPagination>
                         </SliderCrop>
                     </SliderList>

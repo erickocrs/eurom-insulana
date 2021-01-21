@@ -33,20 +33,32 @@ export const Scroll = (props) => {
 
     const isBottomEnd = (newScrollTop) => {
 
-      const documentHeight = document.getElementById("root").offsetHeight;          
-      const windowHeight = window.innerHeight;
+      const rootEl = document.getElementById("root");
 
-      if(-newScrollTop > documentHeight - windowHeight) {
+      if(rootEl){
 
-        newScrollTop = - ( documentHeight - windowHeight);
+        const documentHeight = rootEl.offsetHeight;          
+        const windowHeight = window.innerHeight;
+
+        if(-newScrollTop > documentHeight - windowHeight) {
+
+          newScrollTop = - ( documentHeight - windowHeight);
+        }
       }
-
+      
       return newScrollTop;
     }
 
     const getScrollTopY = (element) => {
       
-      return -(element.getBoundingClientRect().top + (-containerRef.current.getBoundingClientRect().top));
+      if(element && containerRef && containerRef.current)
+      {
+        return -(element.getBoundingClientRect().top + (-containerRef.current.getBoundingClientRect().top));
+      }
+      else
+      {
+        return 0;
+      }
     }
 
     const scrollToTargetNumber = (newTarget) => {

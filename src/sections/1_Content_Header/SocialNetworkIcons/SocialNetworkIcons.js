@@ -22,16 +22,31 @@ export const SocialNetworkIcons = () => {
 }
 
 const IconsContainer = styled.div`
-    position:relative;
+    position:absolute;
     display:flex;
-
     flex-direction:column;
-    margin-top:-126px;
-    margin-right:0px;
+
+    top:auto;left:auto;
+    bottom:12px;
+    right:15px;
+    
+    @media(max-width: 1024px) {
+        bottom:12px;
+        right:10px;
+    }
 `;
 
 const Link = styled.a`
-    margin-bottom:21px;
+    &:not(:last-child) {
+        margin-bottom:21px;
+    }
+    
+    @media(max-width: 1024px) {
+        &:not(:last-child) {
+            margin-bottom:10px;
+        }
+    }
+
     &:hover{
         opacity:.8;
         transform:translate(0,-4px);
@@ -42,6 +57,12 @@ const Link = styled.a`
 `;
 
 const Icon = styled.img`
+    display:block;
+    
+    
+    @media(max-width: 1024px) {
+        width:25px;
+    }
 `;
 
 export default SocialNetworkIcons;
