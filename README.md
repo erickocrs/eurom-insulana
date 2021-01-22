@@ -1,14 +1,12 @@
-<p align="center">
-# Euro M - Insulana 
-</p>
 
-<p align="center">
-<img
+<p align="center"><img
 src="logo-insulana.png"
 raw=true
 alt="Logo Insulana"
 /></p>
 <h6 align="center" style="text-align:center;">React + Redux FrontEnd Project.</h6>
+
+# Euro M - Insulana 
 
 ## Available Scripts
 
