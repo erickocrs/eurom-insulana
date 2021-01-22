@@ -1,6 +1,13 @@
+<img
+src="logo-insulana.png"
+raw=true
+alt="Logo Insulana"
+style="marigin: 0 auto;"
+/>
+
 # Euro M - Insulana 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React + Redux FrontEnd Project.
 
 ## Available Scripts
 
