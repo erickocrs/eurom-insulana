@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 export const ScrollMarker = (props) => {
 
@@ -10,13 +10,11 @@ export const ScrollMarker = (props) => {
     React.useEffect(() => {
 
         if(markerRef) {
-            console.log(" props.markerName",  props.markerName)
             const newTarget = {
-                markerRef : markerRef,
+                markerRef : markerRef.current,
                 markerName : props.markerName ? props.markerName : " "
             }
-            console.log("________________")
-            console.log("newTarget",  newTarget)
+            
             dispatch({
                 type: "SET_NEW_TARGET",
                 newTargetList : newTarget
@@ -35,9 +33,10 @@ export const ScrollMarker = (props) => {
 const Marker = styled.div`
     width:100%;
     height:auto;
+
     display:block;
     
-    ${({ absolute }) => absolute && `
+    ${props => props.absolute && `
         position:absolute;
         top:0;
         width:1px;

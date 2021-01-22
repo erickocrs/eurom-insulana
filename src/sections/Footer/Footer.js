@@ -29,13 +29,13 @@ export const Footer = () => {
                 <Row column>
                     <InfoText>Siga-nos</InfoText>
                     <SocialNetworkList>
-                        <SocialNetworkLink href="./" target="_blank">
+                        <SocialNetworkLink href="./" target="_blank" alt="Ícone Facebook">
                             <SocialNetworkIcon src={FacebookIcon}/>
                         </SocialNetworkLink>
-                        <SocialNetworkLink href="./" target="_blank">
+                        <SocialNetworkLink href="./" target="_blank" alt="Ícone Linkedin">
                             <SocialNetworkIcon src={LinkedinIcon}/>
                         </SocialNetworkLink>
-                        <SocialNetworkLink href="./" target="_blank">
+                        <SocialNetworkLink href="./" target="_blank" alt="Ícone Instagram">
                             <SocialNetworkIcon src={InstagramIcon}/>
                         </SocialNetworkLink>
                     </SocialNetworkList>

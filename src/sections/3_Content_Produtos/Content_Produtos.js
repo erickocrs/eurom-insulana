@@ -47,8 +47,8 @@ export const Content_Produtos = () => {
                     </Texts>
                 </Infos>
                 <ImageBox>
-                    <Image animate={animate} src={imageSrc}/>
-                    <ImageSmaller animate={animate} src={imageSmallerSrc}/>
+                    <Image animate={animate} src={imageSrc} alt="Profissional de higienização trabalhando."/>
+                    <ImageSmaller animate={animate} src={imageSmallerSrc} alt="Uma máquina de higienização."/>
                 </ImageBox>
             </Row>
         </Section>

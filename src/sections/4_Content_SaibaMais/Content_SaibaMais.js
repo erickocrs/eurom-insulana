@@ -44,7 +44,7 @@ export const Content_SaibaMais = () => {
             <Row left>
                 <ImageBox>
                     <ImageContainer animate={animate}>
-                        <Image  src={imageSrc}/>
+                        <Image  src={imageSrc} alt="Mulher sorridente trabalhando."/>
                         <BlueCircleDesign animate={animate}/>
                         <WhiteCircleDesign animate={animate}/>
                         <LineCircleDesign animate={animate}/>

@@ -213,6 +213,10 @@ export const Image = styled.img`
     @media (max-width:700px){
         max-width:260px;
     }
+    
+    @media (max-height:900px){
+        max-height:50vh;
+    }
 `;
 
 export const BlueCircleDesign = styled.div`
@@ -355,6 +359,6 @@ export const ScrollMarkerPosition = styled.div`
     left:0;
     
     @media (max-width:1024px){
-        top:-110px;
+        top:-90px;
     }
 `;

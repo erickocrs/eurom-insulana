@@ -40,7 +40,7 @@ export const ContentHeader = () => {
           <SocialNetworkIcons/>
           <ContentRow center>
             <ImageContainer>
-              <ContentImage className="ContentImage" src={ContentImageSrc}/>
+              <ContentImage className="ContentImage" src={ContentImageSrc} alt="Profissional de higienização em roupa totalmente protegida, com óculos e protetores auriculares. Segurando um higienizador, com uma estrutura de vírus corona ao fundo."/>
               <LightLeak animate={animate}/>
             </ImageContainer>
             <ContentText className="ContentText">

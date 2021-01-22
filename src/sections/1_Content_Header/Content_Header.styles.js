@@ -19,6 +19,10 @@ export const ContentRow = styled(RowComponent)`
   max-height:-webkit-fill-available;
 
   padding-top:98px;
+  
+  @media (max-width:765px){
+    padding-top:70px;
+  }
 
   box-sizing:border-box;
   z-index:1;

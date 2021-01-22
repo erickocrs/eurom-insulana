@@ -20,7 +20,7 @@ const App = () => {
   
   return (
     <Provider store={store}>
-      {/*<PersistGate loading={null} persistor={persistor}>*/}
+      <PersistGate loading={null} persistor={persistor}>
         <Header/>
         <Scroll>
           <Content_Header/>
@@ -31,7 +31,7 @@ const App = () => {
           <Footer/>
         </Scroll>
         <Menu/>
-      {/*</PersistGate>*/}
+      </PersistGate>
     </Provider>
   );
 }

@@ -30,6 +30,10 @@ export const Infos = styled(Col)`
         padding-top:98px;
         box-sizing:border-box;
     }
+    
+    @media(max-width: 765px) {
+        padding-top:70px;
+    }
 `;
 
 export const Texts = styled.div`

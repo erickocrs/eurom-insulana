@@ -4,11 +4,17 @@ import RowComponent from '~/components/Row/Row.js'
 export const Row = styled(RowComponent)`
 
     max-width:calc(1640px + 40px + 40px);
+
     padding: 0 40px 0 40px;
+    
     box-sizing:border-box;
     
     @media(max-width: 1024px) {
         flex-direction:row;
+    }
+
+    @media(max-width: 765px) {
+        padding: 0 25px;
     }
 
     @media(max-width: 350px) {
@@ -34,6 +40,11 @@ export const HeaderSection = styled.header`
     box-shadow: 0px 3px 6px #00000005;
 
     z-index: 1;
+
+
+    @media (max-width:765px){
+        height:70px;
+    }
 `;
 
 export const RightContainer = styled.div`
@@ -52,9 +63,9 @@ export const LogoLink = styled.a`
 export const Logo = styled.img`
     margin: 5px 0px 0px 0px;
     
-    @media(max-width: 350px) {
-        width:170px;
-        margin: 9px 0px 0px 0px;
+    @media (max-width:765px){
+        width:154px;
+        margin: 9px 0px 0px 5px;
     }
 `;
 
@@ -92,19 +103,32 @@ export const ButtonFreeQuote = styled.div`
     }
 `;
 
-export const ButtonOpenMenu = styled.div`
-    width:42px;
-    margin:5px 0px 0 0;
-    cursor: pointer;
+export const ButtonOpenMenu = styled.a`
 
+    width:42px;
+
+    margin:5px 0px 0 0;
+
+    cursor: pointer;
+    
+    @media (max-width:765px){
+        margin:2px 0px 0 0;
+        width:38px;
+    }
 
     div{
         width: 100%;
         height: 2px;
+
         background:#1a2cad;
 
         &:not(:last-child){
+
             margin-bottom: 12px;
+                    
+            @media (max-width:765px){
+                margin-bottom: 10px;
+            }
         }
     }
 `;

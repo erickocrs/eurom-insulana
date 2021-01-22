@@ -61,11 +61,10 @@ export const Scroll = (props) => {
       }
     }
 
-    const scrollToTargetNumber = (newTarget) => {
-
-      if(!isScrollingLock &&
+    const scrollToTargetNumber = (newTarget, force) => {
+      if((force === true) || (!isScrollingLock &&
       newTarget != null &&
-      newTarget != scrollReducer.currentTarget ) {
+      newTarget != scrollReducer.currentTarget )) {
 
         setIsScrollingLock(true);
         
@@ -73,7 +72,8 @@ export const Scroll = (props) => {
 
         let newScrollTop = 0;
         
-        newScrollTop = getScrollTopY(scrollReducer.targetList[newTarget].markerRef.current);
+        if(force !== true)
+        newScrollTop = getScrollTopY(scrollReducer.targetList[newTarget].markerRef);
         
         newScrollTop = isTopEnd(newScrollTop);
 
@@ -167,6 +167,15 @@ export const Scroll = (props) => {
       touchMoves = [];
     }
 
+    const onResize = e => {
+      let newTarget = 0;
+      scrollToTargetNumber(newTarget, true);
+    }
+
+    React.useEffect(() => {
+      window.addEventListener('resize', onResize)
+    },[]);
+
     return(
         <Container 
           tabIndex="0"
@@ -175,8 +184,7 @@ export const Scroll = (props) => {
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
           onWheel={onWheel}
-          onKeyUp={onKeyUp}
-          
+          onKeyUp={onKeyUp}          
           scrollY={scrollY}>
           {props.children}
         </Container>

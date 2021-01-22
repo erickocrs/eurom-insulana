@@ -76,12 +76,12 @@ export const Content_Clientes = () => {
                 <ClientList>
                     {logos.map((logo, i)=>{
                         return(                            
-                            <Client>
+                            <Client key={i}>
+                                {logo.title}
                                 <ClientBox>
                                     <ClientLogo animate={animate} delay={i*100}
-                                    alt={logo.title}
+                                    alt={"Logo Cliente - " + logo.title}
                                     src={logo.image}/>
-                                    {logo.title}
                                 </ClientBox>
                             </Client>
                         )                        

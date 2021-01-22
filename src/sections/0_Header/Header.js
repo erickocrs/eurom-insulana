@@ -29,13 +29,13 @@ export const Header = () => {
         <HeaderSection className="HeaderSection">
           <Row>
             <LogoLink href="./">
-              <Logo src={logo} className="Logo" alt="logo"/>
+              <Logo src={logo} className="Logo" alt="Logo INSULANA"/>
             </LogoLink>
             <RightContainer className="RightContainer">
               <ButtonFreeQuote className="ButtonFreeQuote">
                 Orçamento Gratuito
               </ButtonFreeQuote>
-              <ButtonOpenMenu onClick={openMenu} className="ButtonOpenMenu">
+              <ButtonOpenMenu role="button" onClick={openMenu} className="ButtonOpenMenu">
                 <OpenMenuStyleBar/>
                 <OpenMenuStyleBar/>
                 <OpenMenuStyleBar/>

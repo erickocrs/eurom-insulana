@@ -47,6 +47,7 @@ export const Content_Slider = () => {
             text : "A melhor limpeza e higienização está ao seu alcance, qualquer que seja a dimensão do seu negócio.",
             linkText : "Saiba mais",
             buttonText : "Peça-nos um orçamento",
+            alt : "Um homem limpando o chão.",
             on:true,
         },
         {
@@ -55,6 +56,7 @@ export const Content_Slider = () => {
             text : "Há situações que pedem uma higienização ainda mais especializada dos espaços.",
             linkText : "Saiba mais",
             buttonText : "Peça-nos um orçamento",
+            alt : "Pessoa totalmente em roupa protegida higienizando o ambiente.",
             on:false,
         },
         {
@@ -63,6 +65,7 @@ export const Content_Slider = () => {
             text : "O Serviço de Entregas Insulana garante que as suas encomendas chegam à sua empresa atempadamente.",
             linkText : "Saiba mais",
             buttonText : "Peça-nos um orçamento",
+            alt : "Um entregador sorridente empurrando algumas caixas.",
             on:false,
         },
         {
@@ -71,6 +74,7 @@ export const Content_Slider = () => {
             text : "O nosso Serviço de Assistência Técnica garante a manutenção e reparação de todos os tipos de máquinas industrias.",
             linkText : "Saiba mais",
             buttonText : "Peça-nos um orçamento",
+            alt : "Um técnico sorridente.",
             on:false,
         }
     ]);
@@ -107,7 +111,6 @@ export const Content_Slider = () => {
         {
             let newSlide = scrollReducer.targetList[scrollReducer.currentTarget].markerName.replace('Slider-','');
             
-            console.log("newSlide",newSlide);
             activeSlide(newSlide);
         }
         
@@ -123,27 +126,27 @@ export const Content_Slider = () => {
                             <SliderCarrousel currentSlide={currentSlide}>
                                 {sliderList.map((slide, i) => {
                                     return (
-                                        <Slide on={slide.on}>
+                                        <Slide key={i} isActive={slide.on}>
                                             <ScrollMarkerPosition>
                                                 <ScrollMarker absolute markerName={"Slider-" + i}/>                                                  
                                             </ScrollMarkerPosition>
                                             <SlideRow left>
-                                                <ContainerImage i={i} on={slide.on}>
+                                                <ContainerImage i={i} isActive={slide.on}>
                                                     <ImageBox>
                                                         <CircleDesigns i={i}>
-                                                            <BlueCircleDesign  on={slide.on}/>
-                                                            <WhiteCircleDesign  on={slide.on}/>
-                                                            <LineCircleDesign  on={slide.on}/>
+                                                            <BlueCircleDesign  isActive={slide.on}/>
+                                                            <WhiteCircleDesign  isActive={slide.on}/>
+                                                            <LineCircleDesign  isActive={slide.on}/>
                                                         </CircleDesigns>
-                                                        <Image src={slide.image}/>
+                                                        <Image src={slide.image} alt={slide.alt}/>
                                                     </ImageBox>
                                                 </ContainerImage>
                                                 <Infos>
-                                                    <CircleTextDesign  on={slide.on}/>
-                                                    <Title  on={slide.on}>{slide.title}</Title>
-                                                    <Text  on={slide.on}>{slide.text}</Text>
-                                                    <TextLink  on={slide.on}>{slide.linkText}</TextLink>
-                                                    <Button  on={slide.on}>{slide.buttonText}</Button>
+                                                    <CircleTextDesign  isActive={slide.on}/>
+                                                    <Title  isActive={slide.on}>{slide.title}</Title>
+                                                    <Text  isActive={slide.on}>{slide.text}</Text>
+                                                    <TextLink  isActive={slide.on}>{slide.linkText}</TextLink>
+                                                    <Button  isActive={slide.on}>{slide.buttonText}</Button>
                                                 </Infos>    
                                             </SlideRow>
                                         </Slide>       
@@ -155,8 +158,8 @@ export const Content_Slider = () => {
                             <SliderPagination>
                                 {sliderList.map((slide, i) => {
                                     return (
-                                        <PaginationItem on={slide.on}>
-                                            <PaginationTitle on={slide.on}>{slide.title}</PaginationTitle>
+                                        <PaginationItem key={i} isActive={slide.on}>
+                                            <PaginationTitle isActive={slide.on}>{slide.title}</PaginationTitle>
                                         </PaginationItem>
                                     )
                                 })}

@@ -55,9 +55,7 @@ export const List = styled.div`
     display:flex;
 
     flex-direction:column;
-
 `;
-
 
 export const Item = styled.a`
     font-size:28px;
@@ -70,7 +68,7 @@ export const Item = styled.a`
     color:#ffffff;
 `;
 
-export const CloseButton = styled.div`
+export const CloseButton = styled.a`
     position:absolute;
     top:36px;
     left:auto;
@@ -111,6 +109,5 @@ export const CloseButton = styled.div`
         transform:translate(-50%,0);
 
         background:#ffffff;        
-    }
-    
+    }    
 `;

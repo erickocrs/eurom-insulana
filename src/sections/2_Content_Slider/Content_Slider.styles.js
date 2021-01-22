@@ -17,6 +17,10 @@ export const Section = styled.section`
         min-height: -webkit-fill-available;
         padding:98px 20px 0;        
     }
+    
+    @media(max-width: 765px) {
+        padding-top:70px;
+    }
 `
 
 export const Slider = styled.div`
@@ -36,6 +40,10 @@ export const SliderCrop = styled.div`
         padding-top:98px;
         height:100vh;    
         box-sizing:border-box;
+    }
+    
+    @media(max-width: 765px) {
+        padding-top:70px;
     }
 `
 
@@ -74,7 +82,7 @@ export const Slide = styled.div`
     
     transition:all 500ms ease;
 
-    ${props => props.on && `
+    ${props => props.isActive && `
         opacity:1;
         z-index:1;
         visibility:visible;
@@ -124,12 +132,12 @@ export const ContainerImage = styled(Col)`
     width:${100/12*7+"%"};
 
     opacity:0;  
-    ${props => props.on && `
+    ${props => props.isActive && `
         opacity:1;  
     `};
     
     transform:translate(0,100px) rotateX(30deg) rotateY(10deg);
-    ${props => props.on && `
+    ${props => props.isActive && `
         transform:translate(0,0) rotateX(00deg) rotateY(00deg);
     `};
 
@@ -148,7 +156,7 @@ export const ContainerImage = styled(Col)`
         `};
         
         transform:translate(0,100px);
-        ${props => props.on && `
+        ${props => props.isActive && `
             transform:translate(0,0);
         `};
 
@@ -184,8 +192,8 @@ export const Title = styled.h2`
     text-transform: uppercase;
     color:#1A2CAD;
 
-    opacity:${props => props.on ? "1" : "0"};  
-    transform: ${props => props.on ? 
+    opacity:${props => props.isActive ? "1" : "0"};  
+    transform: ${props => props.isActive ? 
     "translate(0,0)" :
     "translate(-100px,0)"};
 
@@ -208,9 +216,9 @@ export const Text = styled.h3`
 
     color: #313F45;
     
-    opacity:${props => props.on ? "1" : "0"};  
+    opacity:${props => props.isActive ? "1" : "0"};  
 
-    transform: ${props => props.on ? 
+    transform: ${props => props.isActive ? 
     "translate(0,0)" :
     "translate(-110px,0)"};
 
@@ -240,8 +248,8 @@ export const TextLink = styled.a`
 
     color: #1A2CAD;
     
-    opacity:${props => props.on ? "1" : "0"};  
-    transform: ${props => props.on ? 
+    opacity:${props => props.isActive ? "1" : "0"};  
+    transform: ${props => props.isActive ? 
     "translate(0,0)" :
     "translate(-70px,0)"};
 
@@ -278,8 +286,8 @@ export const Button = styled.a`
     letter-spacing:0px;
     font-weight: 500;
     
-    opacity:${props => props.on ? "1" : "0"};  
-    transform: ${props => props.on ?     
+    opacity:${props => props.isActive ? "1" : "0"};  
+    transform: ${props => props.isActive ?     
     "translate(0,0) rotateX(00deg) rotateY(00deg) " :
     "translate(-100px,0) rotateX(30deg) rotateY(15deg) "};
 
@@ -300,7 +308,7 @@ export const Button = styled.a`
             
         font-size:14px;
 
-        transform: ${props => props.on ?     
+        transform: ${props => props.isActive ?     
         "translate(0,0)  " :
         "translate(30px,0)  "};
 
@@ -327,7 +335,7 @@ export const PaginationItem = styled.div`
     width: 12px;
     height: 12px;
 
-    background:${props => props.on ? "#1A2CAD" : "#00000012"};
+    background:${props => props.isActive ? "#1A2CAD" : "#00000012"};
     border: 1px solid #1A2CAD42;
 
     transition:all 100ms ease;
@@ -349,7 +357,7 @@ export const PaginationTitle = styled.span`
     text-transform: uppercase;
     color:#1A2CAD;
 
-    opacity:${props => props.on ? "1" : "0.3"};
+    opacity:${props => props.isActive ? "1" : "0.3"};
     
     transition:all 100ms ease;
 
@@ -375,7 +383,14 @@ export const ScrollMarkerPosition = styled.div`
     top:-180px;
     left:0;
     
+    @media(max-width: 1700px) {
+        top:-105px;
+    }
     @media(max-width: 1024px) {
         top:-98px;
+    }
+        
+    @media (max-width:765px){
+        top:-70px;
     }
 `;
