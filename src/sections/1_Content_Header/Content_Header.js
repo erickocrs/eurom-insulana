@@ -10,6 +10,7 @@ import {
   ContentHeaderSection,
   ContentImage,
   ImageContainer,
+  ImageBox,
   LightLeak,
   ContentText,
   Text,
@@ -39,9 +40,11 @@ export const ContentHeader = () => {
           <GuideToScrollBar/>
           <SocialNetworkIcons/>
           <ContentRow center>
-            <ImageContainer>
-              <ContentImage className="ContentImage" src={ContentImageSrc} alt="Profissional de higienização em roupa totalmente protegida, com óculos e protetores auriculares. Segurando um higienizador, com uma estrutura de vírus corona ao fundo."/>
-              <LightLeak animate={animate}/>
+            <ImageContainer>              
+              <ImageBox>
+                <ContentImage className="ContentImage" src={ContentImageSrc} alt="Profissional de higienização em roupa totalmente protegida, com óculos e protetores auriculares. Segurando um higienizador, com uma estrutura de vírus corona ao fundo."/>
+                <LightLeak animate={animate}/>
+              </ImageBox>
             </ImageContainer>
             <ContentText className="ContentText">
                 <Text className="Text" animate={animate}>As mais avançadas soluções de <strong>higienização Covid-19</strong>.</Text>

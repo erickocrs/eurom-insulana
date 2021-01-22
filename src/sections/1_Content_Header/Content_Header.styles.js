@@ -39,30 +39,50 @@ export const ImageContainer = styled(ColComponent)`
   width:calc(100%/12*8);
 `;
 
-export const ContentImage = styled.img`
-  width:auto;  
+export const ImageBox = styled.div`
+  position:relative;
   max-width:calc(100% + 20px);
+  width:auto;  
   margin:10px 0 0 20px;   
-  max-height:80vh;
-  
   @media(max-width: 1024px) {
-    max-height:40vh;
     margin:-45px 0 0 0 ;   
   }
 `;
 
+export const ContentImage = styled.img`
+  width:auto;  
+  max-width:calc(100% + 20px);
+  max-height:80vh;
+  
+  @media(max-width: 1024px) {
+    max-height:40vh;
+  }
+`;
+
 export const LightLeak = styled.div`
+
   position:absolute;
   display:block;
-  top: 18%;
-  left: 29.8%;
-  width: 156px;
+
+  top: 3%;
+  left: 35%;
+
+  width: 16.7%;
   height: 280px;
-  background:url(${LightLeakSrc}) center center no-repeat ;
+
+  background:url(${LightLeakSrc}) top center no-repeat ;
+  background-size:contain;
+
   z-index:1;
+  
+  @media(max-width: 1024px) {
+    top: 0%;
+    left: 39%;
+  }
 
   opacity:0;  
-  animation:${props => props.animate ? lightAnimation : "" } ease 13000ms infinite;
+  
+  animation:${props => props.animate ? lightAnimation : "" } ease-in-out 3700ms infinite;
 `;
 
 const lightAnimation = keyframes`
