@@ -1,13 +1,16 @@
 # Euro M - Insulana 
-
+<div style="text-align:center; width:100%;">
 <img
 src="logo-insulana.png"
 raw=true
 alt="Logo Insulana"
 style="margin: 0 auto;"
 />
+</div>
 
+<div style="text-align:center; width:100%;">
 <h6 style="text-align: center;">React + Redux FrontEnd Project.</h6>
+</div>
 
 ## Available Scripts
 
