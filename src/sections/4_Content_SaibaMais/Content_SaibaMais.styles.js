@@ -49,21 +49,33 @@ export const BlueCircle = styled.div`
     "translate(0,0) rotateX(00deg) rotateY(00deg) " :
     "translate(250px,0) rotateX(30deg) rotateY(15deg) "};
 
+    @media (max-width:1024px){       
+        
+        transform: ${props => props.animate ? 
+        "translate(0,0) scale(1) " :
+        "translate(250px,0) scale(1.1) "};
+    }
+    
     transition:all 2200ms ease;
     
     @media (max-width:1024px){
+        top:-170px;
+        left:auto;
+        right:-150px;
         
+        width: 600px;
+        height: 600px;
+    }
+
+    @media (max-width:500px){
         top: -80%;
         left: -10%;
         
         width: 150%;
         height: 0;
         padding-bottom:150%;
-            
-        transform: ${props => props.animate ? 
-        "translate(0,0) scale(1) " :
-        "translate(250px,0) scale(1.1) "};
     }
+    
 `;
 
 

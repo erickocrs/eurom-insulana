@@ -37,12 +37,11 @@ export const BlueCircle = styled.div`
     transition:all 2150ms ease;
     
     @media (max-width:1024px){
-        top: -140%;
-        left:-27%;
+        top:-270px;
+        left:-130px;
 
-        width: 130%;
-        height: 0;
-        padding-bottom:131%;
+        width:500px;
+        height: 500px;
             
         transform: ${props => props.animate ? 
         "translate(0,0) scale(1) " :
@@ -90,6 +89,7 @@ export const Text = styled.h3`
     @media (max-width:1024px){
         font-size:18px;
         margin-bottom:5px;
+        max-width:320px;
     }
 `;
 
@@ -155,7 +155,7 @@ export const ClientList = styled.div`
     margin-left:${100/12*1+"%"};
     
     @media (max-width:1024px){
-        margin-top:25%;
+        margin-top:20%;
         margin-left:0;
         max-width:100%;
     }
@@ -175,7 +175,7 @@ export const ClientBox = styled.div`
     margin-bottom:51px;
     
     @media (max-width:1024px){
-        width:calc(100%/6); 
+        width:calc(100%/4); 
         height:50px;
         margin-bottom:5px;
     }
