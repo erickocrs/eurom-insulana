@@ -194,7 +194,7 @@ export const Scroll = (props) => {
 const Container = styled.div`
   display:block;
   width:100%;
-  transform:${props => props.scrollY ? `translate(0px,${props.scrollY}px)` : 'translate(0px,0px)'};
+  transform:${props => props.scrollY ? `translate(0px,${props.scrollY}px) ` : 'translate(0px,0px) '};
   transition:all 1500ms ease;
 `;
 

@@ -136,9 +136,9 @@ export const ContainerImage = styled(Col)`
         opacity:1;  
     `};
     
-    transform:translate(0,100px) rotateX(30deg) rotateY(10deg);
+    transform:translate(0,20%) scale(0.85) ;
     ${props => props.isActive && `
-        transform:translate(0,0) rotateX(00deg) rotateY(00deg);
+        transform:translate(0,0) scale(1) ;
     `};
 
     transition:all 1500ms ease;
@@ -154,12 +154,6 @@ export const ContainerImage = styled(Col)`
         ${props => props.i == 2 && `
             left:-250px;
         `};
-        
-        transform:translate(0,100px);
-        ${props => props.isActive && `
-            transform:translate(0,0);
-        `};
-
     }
 `
 
@@ -194,8 +188,8 @@ export const Title = styled.h2`
 
     opacity:${props => props.isActive ? "1" : "0"};  
     transform: ${props => props.isActive ? 
-    "translate(0,0)" :
-    "translate(-100px,0)"};
+    "translate(0,0) " :
+    "translate(-100px,0) "};
 
     transition:all 2200ms ease;
     
@@ -219,8 +213,8 @@ export const Text = styled.h3`
     opacity:${props => props.isActive ? "1" : "0"};  
 
     transform: ${props => props.isActive ? 
-    "translate(0,0)" :
-    "translate(-110px,0)"};
+    "translate(0,0) " :
+    "translate(-110px,0) "};
 
     transition:all 2200ms ease 200ms;
 
@@ -250,8 +244,8 @@ export const TextLink = styled.a`
     
     opacity:${props => props.isActive ? "1" : "0"};  
     transform: ${props => props.isActive ? 
-    "translate(0,0)" :
-    "translate(-70px,0)"};
+    "translate(0,0) " :
+    "translate(-70px,0) "};
 
     transition:all 2200ms ease 400ms;
     
@@ -288,8 +282,8 @@ export const Button = styled.a`
     
     opacity:${props => props.isActive ? "1" : "0"};  
     transform: ${props => props.isActive ?     
-    "translate(0,0) rotateX(00deg) rotateY(00deg) " :
-    "translate(-100px,0) rotateX(30deg) rotateY(15deg) "};
+    "translate(0,0) scale(1) " :
+    "translate(-100px,0) scale(.7) "};
 
     transition:all 1500ms ease 600ms;
 
@@ -309,8 +303,8 @@ export const Button = styled.a`
         font-size:14px;
 
         transform: ${props => props.isActive ?     
-        "translate(0,0)  " :
-        "translate(30px,0)  "};
+        "translate(0,0) " :
+        "translate(30px,0) "};
 
     }
 `

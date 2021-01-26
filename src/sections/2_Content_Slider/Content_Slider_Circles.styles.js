@@ -19,7 +19,6 @@ export const CircleDesigns = styled.div`
     transform:translate(-50%,-50%);
 
     z-index:-2;
-    
 `;
 
 export const BlueCircleDesign = styled.div`
@@ -35,13 +34,13 @@ export const BlueCircleDesign = styled.div`
     border-radius:50%;
     z-index:-2;
     
-    opacity:${props => props.on ? "1" : "0"};  
-    transform: ${props => props.on ? 
+    opacity:${props => props.isActive ? "1" : "0"};  
+    transform: ${props => props.isActive ? 
     "translate(0,0) rotateX(00deg) rotateY(00deg) " :
     "translate(0,0) rotateX(70deg) rotateY(30deg) "};
 
     @media(max-width: 1024px) {
-        transform: ${props => props.on ? 
+        transform: ${props => props.isActive ? 
         "translate(-5%,-15%)" :
         "translate(0,0)" }
     }
@@ -64,13 +63,13 @@ export const WhiteCircleDesign = styled.div`
     z-index:-2;
     
     
-    opacity:${props => props.on ? "1" : "0"};  
-    transform: ${props => props.on ? 
+    opacity:${props => props.isActive ? "1" : "0"};  
+    transform: ${props => props.isActive ? 
     "translate(0,0) rotateX(00deg) rotateY(00deg) " :
     "translate(0,0) rotateX(70deg) rotateY(10deg) "};
 
     @media(max-width: 1024px) {
-        transform: ${props => props.on ? 
+        transform: ${props => props.isActive ? 
         "translate(-5%,-15%)" :
         "translate(0,0)" }
     }
@@ -92,13 +91,13 @@ export const LineCircleDesign = styled.div`
 
     z-index:-2;
      
-    opacity:${props => props.on ? "1" : "0"};  
-    transform: ${props => props.on ? 
+    opacity:${props => props.isActive ? "1" : "0"};  
+    transform: ${props => props.isActive ? 
     "translate(0,0) rotateX(00deg) rotateY(00deg) " :
     "translate(0,0) rotateX(70deg) rotateY(-30deg) "};
   
     @media(max-width: 1024px) {
-        transform: ${props => props.on ? 
+        transform: ${props => props.isActive ? 
         "translate(-5%,-15%)" :
         "translate(0,0)" }
     }
@@ -125,7 +124,7 @@ export const CircleTextDesign = styled.div`
     transform:translate(-50%,-50%) scale(0.5);
     transition:all 0ms ease;
 
-    ${props => props.on && `
+    ${props => props.isActive && `
         opacity:.3;
         transform:translate(-50%,-50%) scale(1);
     `};

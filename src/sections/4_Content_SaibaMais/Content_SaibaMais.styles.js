@@ -46,8 +46,8 @@ export const BlueCircle = styled.div`
 
     opacity:${props => props.animate ? "1" : "0"};  
     transform: ${props => props.animate ? 
-    "translate(0,0) rotateX(00deg) rotateY(00deg) " :
-    "translate(250px,0) rotateX(30deg) rotateY(15deg) "};
+    "translate(0,0) scale(1) " :
+    "translate(250px,0) scale(1.1) "};
 
     @media (max-width:1024px){       
         
@@ -89,8 +89,8 @@ export const Title = styled.h2`
     
     opacity:${props => props.animate ? "1" : "0"};  
     transform: ${props => props.animate ? 
-    "translate(0,0)" :
-    "translate(-200px,0)"};
+    "translate(0,0) " :
+    "translate(-200px,0) "};
 
     transition:all 2000ms ease;
     
@@ -113,8 +113,8 @@ export const Text = styled.h3`
     
     opacity:${props => props.animate ? "1" : "0"};  
     transform: ${props => props.animate ? 
-    "translate(0,0)" :
-    "translate(-275px,0)"};
+    "translate(0,0) " :
+    "translate(-275px,0) "};
 
     transition:all 2100ms ease;
     
@@ -150,9 +150,9 @@ export const Button = styled.a`
     box-shadow: 4px 4px 13px #0000001A;
     
     opacity:${props => props.animate ? "1" : "0"};  
-    transform: ${props => props.animate ?     
-    "translate(0,0) rotateX(00deg) rotateY(00deg) " :
-    "translate(-250px,0) rotateX(-30deg) rotateY(15deg) "};
+    transform: ${props => props.animate ?      
+        "translate(0,0) scale(1) " :
+        "translate(-250px,0) scale(.9) "};    
 
     transition:all 2150ms ease;
     
@@ -166,11 +166,7 @@ export const Button = styled.a`
         width:190px;
         height:42px;
         font-size:16px;
-        margin-top:10px;
-            
-        transform: ${props => props.animate ?     
-        "translate(0,0) scale(1) " :
-        "translate(-250px,0) scale(.9) "};        
+        margin-top:10px;     
     }
 `;
 
@@ -183,6 +179,8 @@ export const ImageContainer = styled.div`
     z-index:0;
     
     opacity:${props => props.animate ? "1" : "0"};  
+    opacity:1;
+    transform:${props => props.animate ? "scale(1)" : "scale(.9)"};  
     transition:all 2150ms ease;
 `;
 
@@ -235,8 +233,8 @@ export const BlueCircleDesign = styled.div`
     
     opacity:${props => props.animate ? "1" : "0"};  
     transform: ${props => props.animate ? 
-    "translate(0,0) rotateX(00deg) rotateY(00deg) " :
-    "translate(0,0) rotateX(70deg) rotateY(30deg) "};
+        "translate(0,0) scale(1) " :
+        "translate(0,0) scale(.5) "};
 
     transition:all 2150ms ease;
     
@@ -248,9 +246,6 @@ export const BlueCircleDesign = styled.div`
 
         padding-bottom:80.2%;
             
-        transform: ${props => props.animate ? 
-        "translate(0,0) scale(1) " :
-        "translate(0,0) scale(.5) "};
     }
 
     @media (max-width:1024px){
@@ -278,8 +273,8 @@ export const WhiteCircleDesign = styled.div`
     
     opacity:${props => props.animate ? "1" : "0"};  
     transform: ${props => props.animate ? 
-    "translate(0,0) rotateX(00deg) rotateY(00deg) " :
-    "translate(0,0) rotateX(70deg) rotateY(10deg) "};
+    "translate(0,0) scale(1) " :
+    "translate(0,0) scale(.5) "};
 
     transition:all 2150ms ease;
     
@@ -290,10 +285,6 @@ export const WhiteCircleDesign = styled.div`
         height:0;
 
         padding-bottom:80.2%;
-
-        transform: ${props => props.animate ? 
-        "translate(0,0) scale(1) " :
-        "translate(0,0) scale(.5) "};
     }
 
     @media (max-width:1024px){
@@ -321,8 +312,8 @@ export const LineCircleDesign = styled.div`
      
     opacity:${props => props.animate ? "1" : "0"};  
     transform: ${props => props.animate ? 
-    "translate(0,0) rotateX(00deg) rotateY(00deg) " :
-    "translate(0,0) rotateX(70deg) rotateY(-30deg) "};
+    "translate(0,0) scale(1) " :
+    "translate(0,0) scale(.5) "};
 
     transition:all 2150ms ease;
     
@@ -334,10 +325,6 @@ export const LineCircleDesign = styled.div`
         height:0;
 
         padding-bottom:80.2%;
-        
-        transform: ${props => props.animate ? 
-        "translate(0,0) scale(1) " :
-        "translate(0,0) scale(.5) "};
     }
 
     @media (max-width:1024px){

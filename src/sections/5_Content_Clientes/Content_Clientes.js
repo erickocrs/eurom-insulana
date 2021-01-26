@@ -67,11 +67,11 @@ export const Content_Clientes = () => {
                 <ScrollMarker markerName="Clientes"/>
             </ScrollMarkerPosition>
             <Row left>
-                <Infos>
+                <Infos animate={animate}>
                     <BlueCircle animate={animate}/>
-                    <Title animate={animate}>Os nossos clientes</Title>
-                    <Text animate={animate}>Descubra quem confia na Insulana para garantir as melhores soluções <br/>de higienização.</Text>
-                    <Button animate={animate}>Quer ser contatado?</Button>                    
+                    <Title >Os nossos clientes</Title>
+                    <Text >Descubra quem confia na Insulana para garantir as melhores soluções <br/>de higienização.</Text>
+                    <Button >Quer ser contatado?</Button>                    
                 </Infos>
                 <ClientList>
                     {logos.map((logo, i)=>{

@@ -1,8 +1,8 @@
 
 <p align="center"><img
-src="logo-insulana.png"
+src="logo-eurom.png"
 raw=true
-alt="Logo Insulana"
+alt="Logo Euro M"
 /></p>
 <h6 align="center" style="text-align:center;">React + Redux FrontEnd Project.</h6>
 

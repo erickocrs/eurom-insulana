@@ -45,6 +45,7 @@ export const ImageBox = styled.div`
   width:auto;  
   margin:10px 0 0 20px;   
   @media(max-width: 1024px) {
+    max-width:100%;
     margin:-45px 0 0 0 ;   
   }
 `;
@@ -53,8 +54,11 @@ export const ContentImage = styled.img`
   width:auto;  
   max-width:calc(100% + 20px);
   max-height:80vh;
+
+  opacity:0;
   
   @media(max-width: 1024px) {
+    max-width:100%;
     max-height:40vh;
   }
 `;
@@ -76,20 +80,21 @@ export const LightLeak = styled.div`
   z-index:1;
   
   @media(max-width: 1024px) {
-    top: 0%;
+    top: -1%;
     left: 39%;
+    width: 12%;
   }
 
   opacity:0;  
   
-  animation:${props => props.animate ? lightAnimation : "" } ease-in-out 3700ms infinite;
+  animation:${props => props.animate ? lightAnimation : "" } ease-in-out 6000ms infinite;
 `;
 
 const lightAnimation = keyframes`
-  0% { transform:translate(110px,0) rotate(-17deg) scale(.7); opacity:0;}
-  11% {transform:translate(1px,7px) rotate(-17deg) scale(.8); opacity:0.35;}
-  34% { transform:translate(-40px,20px) rotate(-10deg) scale(.8); opacity:0;}
-  100% { transform:translate(-40px,20px) rotate(-10deg) scale(.8); opacity:0;}
+  0% { transform:translate(110px,0)  rotate(-17deg) scale(.7); opacity:0;}
+  11% {transform:translate(1px,7px)  rotate(-17deg) scale(.8); opacity:0.35;}
+  34% { transform:translate(-40px,20px)  rotate(-10deg) scale(.8); opacity:0;}
+  100% { transform:translate(-40px,20px)  rotate(-10deg) scale(.8); opacity:0;}
 `
 
 export const ContentText = styled(ColComponent)`
@@ -193,4 +198,67 @@ export const Button = styled.div`
     font-size:16px;
   }
 
+`;
+
+const ImageLayer = styled.img`
+  position:absolute;
+  float:left;
+  display:block;
+  top:0;
+  left:0;
+  width:calc(100% + 20px);
+  height:auto;
+  
+  @media(max-width: 1024px) {
+    width:100%;
+  }
+`;
+
+export const ImageLayerShape = styled(ImageLayer)`
+
+`;
+
+export const ImageLayerVirus = styled(ImageLayer)`
+
+  animation:${props => props.animate ? imageLayerVirusAnimation : "" } ease 15000ms infinite;
+
+`;
+
+const imageLayerVirusAnimation = keyframes`
+  0% { transform:translate(0,0)  scale(1); opacity:1;}
+  20% { transform:translate(0,0)  scale(1); opacity:1;}
+  50% { transform:translate(0,0)  scale(1); opacity:.15;}
+  70% { transform:translate(0,0)  scale(1); opacity:.15;}
+  100% { transform:translate(0,0)  scale(1); opacity:1;}
+`
+
+export const ImageLayerProfissional = styled(ImageLayer)`
+`;
+
+const imageLayerFogAnimation = keyframes`
+  0% { transform:translate(0,-2%)  scale(.5); opacity:0;}
+  10%{ opacity:.8;}
+  60%{ opacity:.8;}
+  100% { transform:translate(-120%,0)  scale(1.3); opacity:0;}
+`
+
+const imageLayerFogAnimation2 = keyframes`
+  0% { transform:translate(0,5%)  scale(.5) scale(-1,1); opacity:0;}
+  10%{ opacity:.8;}
+  60%{ opacity:.8;}
+  100% { transform:translate(-120%,-10%)  scale(2) scale(-1,1); opacity:0;}
+`
+
+export const ImageFog = styled(ImageLayer)`
+  width:auto;
+
+  top:-17%;
+  left:auto;
+  right:-15%;
+  z-index:1;
+
+  width:43%;
+  height:auto;
+
+  animation:${props => props.animate ? ( props.fog === 2 ? imageLayerFogAnimation2 : imageLayerFogAnimation ) : "" } ease 15000ms infinite;
 `;

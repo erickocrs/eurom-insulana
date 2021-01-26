@@ -65,14 +65,8 @@ export const BlueCircle = styled.div`
     
     opacity:${props => props.animate ? "1" : "0"};  
     transform: ${props => props.animate ? 
-    "translate(0,0) rotateX(0deg) rotateY(0deg) " :
-    "translate(-50px,0) rotateX(-50deg) rotateY(-15deg) "};
-    
-    @media (max-width:1024px){
-        transform: ${props => props.animate ? 
-        "translate(0,0) scale(1) " :
-        "translate(-50px,0) scale(.7) "};
-    }
+    "translate(0,0) scale(1) " :
+    "translate(-50px,0) scale(.7) "};
 
     transition:all 2000ms ease;
 
@@ -90,8 +84,8 @@ export const Title = styled.h2`
     
     opacity:${props => props.animate ? "1" : "0"};  
     transform: ${props => props.animate ? 
-    "translate(0,0)" :
-    "translate(200px,0)"};
+    "translate(0,0) " :
+    "translate(200px,0) "};
 
     transition:all 2500ms ease;
 
@@ -111,8 +105,8 @@ export const Text = styled.h3`
     
     opacity:${props => props.animate ? "1" : "0"};  
     transform: ${props => props.animate ? 
-    "translate(0,0)" :
-    "translate(275px,0)"};
+    "translate(0,0) " :
+    "translate(275px,0) "};
 
     transition:all 2500ms ease;
     
@@ -147,14 +141,8 @@ export const Button = styled.a`
     
     opacity:${props => props.animate ? "1" : "0"};  
     transform: ${props => props.animate ? 
-    "translate(0,0) rotateX(00deg) rotateY(00deg) " :
-    "translate(250px,0) rotateX(30deg) rotateY(15deg) "};
-
-    @media (max-width:1024px){
-        transform: ${props => props.animate ? 
-            "translate(0,0) scale(1)" :
-            "translate(250px,0) scale(.8) "};
-    }
+            "translate(0,0) scale(1) " :
+            "translate(250px,0) scale(.8)  "};
 
     transition:all 2700ms ease;
         
@@ -198,8 +186,8 @@ export const Image = styled.img`
     
     opacity:${props => props.animate ? "1" : "0.7"};  
     transform: ${props => props.animate ? 
-    "translate(0,0)" :
-    "translate(0,-50px)"};
+    "translate(0,0) " :
+    "translate(0,-50px) "};
 
     transition:all 3700ms ease;
     z-index:1;
@@ -216,8 +204,8 @@ export const ImageSmaller = styled.img`
     margin:0 0 -4% -23%;
     opacity:${props => props.animate ? "1" : "0.7"};  
     transform: ${props => props.animate ? 
-    "translate(0,0)" :
-    "translate(0,150px)"};
+    "translate(0,0) " :
+    "translate(0,150px) "};
 
     transition:all 3500ms ease;
     z-index:1;
