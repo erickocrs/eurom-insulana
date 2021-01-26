@@ -15,7 +15,7 @@ export const Section = styled.section`
     @media(max-width: 1024px) {
         min-height:100vh;
         min-height: -webkit-fill-available;
-        padding:98px 20px 0;        
+        padding:98px 20px 50px;        
     }
     
     @media(max-width: 765px) {
@@ -147,12 +147,12 @@ export const ContainerImage = styled(Col)`
         position:absolute;
         top:auto;
         bottom:0px;
-        left:-150px;
+        left:-27%;
         justify-content:flex-start;
         
             
         ${props => props.i == 2 && `
-            left:-250px;
+            
         `};
     }
 `
@@ -169,7 +169,7 @@ export const Image = styled.img`
 `
 
 export const ImageBox = styled.div`
-    
+    position:relative;
     width:auto;
     max-width:100%;
     margin-right:15px;

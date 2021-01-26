@@ -163,7 +163,6 @@ export const ClientBox = styled.div`
 
 export const ClientLogo = styled.img`   
     width:auto;
-    
     opacity:${props => props.animate ? "1" : "0"};  
     transform: ${props => props.animate ?      
     "translate(0,0)" :

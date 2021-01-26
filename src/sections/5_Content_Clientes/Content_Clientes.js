@@ -4,18 +4,18 @@ import { useDispatch, useSelector } from "react-redux";
 
 import ScrollMarker from '~/components/Scroll/ScrollMarker'
 
-import imageSrc_01 from '~/assets/images/TAAG.png'
-import imageSrc_02 from '~/assets/images/SONANGOL.png'
-import imageSrc_03 from '~/assets/images/TEIXEIRA_DUARTE.png'
-import imageSrc_04 from '~/assets/images/BAI.png'
-import imageSrc_05 from '~/assets/images/INTER_OIL.png'
-import imageSrc_06 from '~/assets/images/GRIMALDI_LINES.png'
-import imageSrc_07 from '~/assets/images/CAIXA_TOTTA.png'
-import imageSrc_08 from '~/assets/images/MAXI.png'
-import imageSrc_09 from '~/assets/images/SIEMENS.png'
-import imageSrc_10 from '~/assets/images/REPSOL.png'
-import imageSrc_11 from '~/assets/images/BP.png'
-import imageSrc_12 from '~/assets/images/ENANGOLA.png'
+import imageSrc_01 from '~/assets/images/clients/TAAG.png'
+import imageSrc_02 from '~/assets/images/clients/SONANGOL.png'
+import imageSrc_03 from '~/assets/images/clients/TEIXEIRA_DUARTE.png'
+import imageSrc_04 from '~/assets/images/clients/BAI.png'
+import imageSrc_05 from '~/assets/images/clients/INTER_OIL.png'
+import imageSrc_06 from '~/assets/images/clients/GRIMALDI_LINES.png'
+import imageSrc_07 from '~/assets/images/clients/CAIXA_TOTTA.png'
+import imageSrc_08 from '~/assets/images/clients/MAXI.png'
+import imageSrc_09 from '~/assets/images/clients/SIEMENS.png'
+import imageSrc_10 from '~/assets/images/clients/REPSOL.png'
+import imageSrc_11 from '~/assets/images/clients/BP.png'
+import imageSrc_12 from '~/assets/images/clients/ENANGOLA.png'
 import {
 Section,
 Infos,

@@ -10,21 +10,33 @@ export const CircleDesigns = styled.div`
     max-width:621px;
 
     top:50%;
-    left:50%;
+    left:auto;
+    right:0;
 
     ${props => props.i == 2 && `
-        left:54%;
+        top:51%;
+        right:1%;
+    `};
+    
+    ${props => props.i == 3 && `
+        top:54%;
+        right:0%;
     `};
 
-    transform:translate(-50%,-50%);
+    transform:translate(0,-50%);
 
     z-index:-2;
+    
+    @media(max-width: 1024px) {
+
+        transform:translate(5%,-37%);
+    }
 `;
 
 export const BlueCircleDesign = styled.div`
     position:absolute;
-    top:9%;
-    left:-8%;
+    top:7%;
+    left:-10%;
     width:98.55%;
     height:0;
     padding-bottom:98.55%;
@@ -50,8 +62,8 @@ export const BlueCircleDesign = styled.div`
 
 export const WhiteCircleDesign = styled.div`
     position:absolute;
-    top:9%;
-    left:12%;
+    top:7.5%;
+    left:6%;
     width:98.55%;
     height:0;
     padding-bottom:98.55%;
@@ -79,8 +91,8 @@ export const WhiteCircleDesign = styled.div`
 
 export const LineCircleDesign = styled.div`
     position:absolute;
-    top:0;
-    left:14%;
+    top:-1%;
+    left:9.5%;
     width: 95.81%;
     height:0;
     padding-bottom:95.95%;
